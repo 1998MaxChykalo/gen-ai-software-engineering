@@ -1,0 +1,291 @@
+[
+  {
+    "customer_id": "CUST-2000",
+    "customer_email": "mona.okafor1000@workhub.net",
+    "customer_name": "Mona Okafor",
+    "subject": "MFA code not accepted",
+    "description": "The mfa verification code from my authenticator app is rejected every single time I try to log in. This is critical and our production down right now, please treat as urgent.",
+    "tags": [
+      "vip"
+    ],
+    "metadata": {
+      "source": "email",
+      "device_type": "mobile",
+      "browser": "Chrome"
+    }
+  },
+  {
+    "customer_id": "CUST-2001",
+    "customer_email": "noah.ivanov1001@mail-test.com",
+    "customer_name": "Noah Ivanov",
+    "subject": "Dashboard is completely broken",
+    "description": "The analytics dashboard is broken and not working at all, it just shows a blank white screen. This is important and currently blocking our team, please handle asap.",
+    "tags": [],
+    "metadata": {
+      "source": "email",
+      "device_type": "desktop",
+      "browser": "Edge"
+    }
+  },
+  {
+    "customer_id": "CUST-2002",
+    "customer_email": "olga.silva1002@example.com",
+    "customer_name": "Olga Silva",
+    "subject": "Need a receipt for my payment",
+    "description": "Could you please send me a receipt for the payment method used on my last billing cycle.",
+    "tags": [
+      "web",
+      "mobile"
+    ],
+    "metadata": {
+      "source": "email",
+      "device_type": "desktop",
+      "browser": "Safari"
+    }
+  },
+  {
+    "customer_id": "CUST-2003",
+    "customer_email": "priya.haddad1003@customer.io",
+    "customer_name": "Priya Haddad",
+    "subject": "Request a feature: saved filters",
+    "description": "I would like to request a feature to save filter presets, this improvement would save a lot of time. This is just a minor, cosmetic suggestion, low priority whenever convenient.",
+    "tags": [
+      "vip"
+    ],
+    "metadata": {
+      "source": "email",
+      "device_type": "mobile",
+      "browser": "Edge"
+    }
+  },
+  {
+    "customer_id": "CUST-2004",
+    "customer_email": "quinn.larsen1004@customer.io",
+    "customer_name": "Quinn Larsen",
+    "subject": "Regression in the notification badge",
+    "description": "We found a regression: the notification badge count no longer clears, steps to reproduce are simply opening the inbox.",
+    "tags": [],
+    "metadata": {
+      "source": "email",
+      "device_type": "mobile",
+      "browser": "Edge"
+    }
+  },
+  {
+    "customer_id": "CUST-2005",
+    "customer_email": "rosa.park1005@customer.io",
+    "customer_name": "Rosa Park",
+    "subject": "General inquiry about your company",
+    "description": "I was just curious and wanted to ask a general question about your company history and mission. There is a security concern here and we can't access the system at all.",
+    "tags": [
+      "mobile"
+    ],
+    "metadata": {
+      "source": "phone",
+      "device_type": "tablet",
+      "browser": "Edge"
+    }
+  },
+  {
+    "customer_id": "CUST-2006",
+    "customer_email": "sami.rossi1006@example.com",
+    "customer_name": "Sami Rossi",
+    "subject": "Cannot log in to my account",
+    "description": "I have tried resetting my password three times today but I still cannot log in to my account. This is important and currently blocking our team, please handle asap.",
+    "tags": [
+      "vip"
+    ],
+    "metadata": {
+      "source": "phone",
+      "device_type": "desktop",
+      "browser": "Safari"
+    }
+  },
+  {
+    "customer_id": "CUST-2007",
+    "customer_email": "talia.diallo1007@example.com",
+    "customer_name": "Talia Diallo",
+    "subject": "Upload feature is glitching",
+    "description": "The file upload widget is glitching and crashing the browser tab whenever I select a large file.",
+    "tags": [
+      "web",
+      "follow-up"
+    ],
+    "metadata": {
+      "source": "chat",
+      "device_type": "tablet"
+    }
+  },
+  {
+    "customer_id": "CUST-2008",
+    "customer_email": "umar.nguyen1008@workhub.net",
+    "customer_name": "Umar Nguyen",
+    "subject": "Overcharged on my monthly plan",
+    "description": "I was overcharged on my monthly plan this billing cycle and want the extra charge refunded. A cosmetic suggestion only, minor and low priority.",
+    "tags": [],
+    "metadata": {
+      "source": "api",
+      "device_type": "tablet",
+      "browser": "Chrome"
+    }
+  },
+  {
+    "customer_id": "CUST-2009",
+    "customer_email": "vera.smith1009@customer.io",
+    "customer_name": "Vera Smith",
+    "subject": "Feature request: dark mode",
+    "description": "It would be nice to have a dark mode option added to the settings page for night-time use.",
+    "tags": [
+      "escalated"
+    ],
+    "metadata": {
+      "source": "web_form",
+      "device_type": "tablet",
+      "browser": "Safari"
+    }
+  },
+  {
+    "customer_id": "CUST-2010",
+    "customer_email": "wes.garcia1010@workhub.net",
+    "customer_name": "Wes Garcia",
+    "subject": "Defect in the search filter",
+    "description": "This is a defect in the search filter. Steps to reproduce: filter by date range, results stay unfiltered, which is not the expected behavior. Marking this urgent since it is a critical, production down situation.",
+    "tags": [
+      "beta-user"
+    ],
+    "metadata": {
+      "source": "api",
+      "device_type": "mobile",
+      "browser": "Edge"
+    }
+  },
+  {
+    "customer_id": "CUST-2011",
+    "customer_email": "xin.kowalski1011@mail-test.com",
+    "customer_name": "Xin Kowalski",
+    "subject": "Partnership inquiry",
+    "description": "I am reaching out about a potential partnership opportunity rather than a support matter. High priority: this is blocking release and quite important to us.",
+    "tags": [
+      "vip",
+      "web"
+    ],
+    "metadata": {
+      "source": "chat",
+      "device_type": "tablet",
+      "browser": "Edge"
+    }
+  },
+  {
+    "customer_id": "CUST-2012",
+    "customer_email": "yara.muller1012@workhub.net",
+    "customer_name": "Yara Muller",
+    "subject": "Sign-in keeps failing",
+    "description": "Every time I try to sign in it says my credentials are invalid even though the password is correct.",
+    "tags": [
+      "web",
+      "billing"
+    ],
+    "metadata": {
+      "source": "api",
+      "device_type": "desktop",
+      "browser": "Safari"
+    }
+  },
+  {
+    "customer_id": "CUST-2013",
+    "customer_email": "zane.chen1013@mail-test.com",
+    "customer_name": "Zane Chen",
+    "subject": "Site is extremely slow and timing out",
+    "description": "Every page load results in a timeout and the site has been unresponsive for the last hour. Nice to have, fairly trivial and minor, no rush at all.",
+    "tags": [
+      "escalated"
+    ],
+    "metadata": {
+      "source": "email",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "CUST-2014",
+    "customer_email": "alice.okafor1014@mail-test.com",
+    "customer_name": "Alice Okafor",
+    "subject": "Refund request for duplicate charge",
+    "description": "I was charged twice for the same subscription and I would like a refund for the duplicate charge.",
+    "tags": [
+      "mobile",
+      "web"
+    ],
+    "metadata": {
+      "source": "phone",
+      "device_type": "desktop",
+      "browser": "Safari"
+    }
+  },
+  {
+    "customer_id": "CUST-2015",
+    "customer_email": "bob.ivanov1015@mail-test.com",
+    "customer_name": "Bob Ivanov",
+    "subject": "Wish list item: multi-language support",
+    "description": "This is on my wish list, an improvement to add multi-language support would help our whole team. This is critical and our production down right now, please treat as urgent.",
+    "tags": [],
+    "metadata": {
+      "source": "email",
+      "device_type": "desktop",
+      "browser": "Chrome"
+    }
+  },
+  {
+    "customer_id": "CUST-2016",
+    "customer_email": "carla.silva1016@mail-test.com",
+    "customer_name": "Carla Silva",
+    "subject": "Regression in date formatting",
+    "description": "Steps to reproduce: switch locale to French, the date formatting regression shows the wrong actual behavior versus expected behavior. Please treat as important, it is blocking other work and needs attention asap.",
+    "tags": [],
+    "metadata": {
+      "source": "chat",
+      "device_type": "tablet",
+      "browser": "Edge"
+    }
+  },
+  {
+    "customer_id": "CUST-2017",
+    "customer_email": "derek.haddad1017@example.com",
+    "customer_name": "Derek Haddad",
+    "subject": "Partnership inquiry",
+    "description": "I am reaching out about a potential partnership opportunity rather than a support matter.",
+    "tags": [
+      "escalated"
+    ],
+    "metadata": {
+      "source": "email",
+      "device_type": "tablet",
+      "browser": "Firefox"
+    }
+  },
+  {
+    "customer_id": "CUST-2018",
+    "customer_email": "elena.larsen1018@example.com",
+    "customer_name": "Elena Larsen",
+    "subject": "Password reset link is broken",
+    "description": "The password reset email link takes me to an error page, so I cannot access my account. Nice to have, fairly trivial and minor, no rush at all.",
+    "tags": [],
+    "metadata": {
+      "source": "email",
+      "device_type": "mobile"
+    }
+  },
+  {
+    "customer_id": "CUST-2019",
+    "customer_email": "farid.park1019@customer.io",
+    "customer_name": "Farid Park",
+    "subject": "Application freezes when exporting",
+    "description": "The export button causes the whole application to freeze and become unresponsive for minutes.",
+    "tags": [
+      "vip"
+    ],
+    "metadata": {
+      "source": "chat",
+      "device_type": "tablet"
+    }
+  }
+]

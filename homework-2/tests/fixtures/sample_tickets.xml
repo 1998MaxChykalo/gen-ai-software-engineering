@@ -1,0 +1,429 @@
+<?xml version="1.0" ?>
+<tickets>
+  <ticket>
+    <customer_id>CUST-3000</customer_id>
+    <customer_email>yara.rossi2000@workhub.net</customer_email>
+    <customer_name>Yara Rossi</customer_name>
+    <subject>Trouble with two-factor login</subject>
+    <description>Two-factor authentication is not sending me a verification code so I cannot log in to the dashboard. Marking this urgent since it is a critical, production down situation.</description>
+    <tags>
+      <tag>beta-user</tag>
+      <tag>escalated</tag>
+    </tags>
+    <metadata>
+      <source>phone</source>
+      <browser>Edge</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3001</customer_id>
+    <customer_email>zane.diallo2001@mail-test.com</customer_email>
+    <customer_name>Zane Diallo</customer_name>
+    <subject>Random crashing during video calls</subject>
+    <description>The desktop client keeps crashing and freezing mid-call, this malfunction happens every day. High priority: this is blocking release and quite important to us.</description>
+    <tags/>
+    <metadata>
+      <source>api</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3002</customer_id>
+    <customer_email>alice.nguyen2002@customer.io</customer_email>
+    <customer_name>Alice Nguyen</customer_name>
+    <subject>Subscription renewal overcharged me</subject>
+    <description>My subscription renewal charged me for the annual plan when I only asked for the monthly payment.</description>
+    <tags/>
+    <metadata>
+      <source>api</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3003</customer_id>
+    <customer_email>bob.smith2003@workhub.net</customer_email>
+    <customer_name>Bob Smith</customer_name>
+    <subject>Could you add a mobile widget</subject>
+    <description>Could you add a home-screen widget, that new feature would make checking status much faster. A cosmetic suggestion only, minor and low priority.</description>
+    <tags/>
+    <metadata>
+      <source>email</source>
+      <browser>Firefox</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3004</customer_id>
+    <customer_email>carla.garcia2004@workhub.net</customer_email>
+    <customer_name>Carla Garcia</customer_name>
+    <subject>Reproducible issue with sorting</subject>
+    <description>The sorting issue is reproducible every time. Steps to reproduce: sort by name twice, the actual behavior reverses only half the list.</description>
+    <tags/>
+    <metadata>
+      <source>chat</source>
+      <browser>Edge</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3005</customer_id>
+    <customer_email>derek.kowalski2005@example.com</customer_email>
+    <customer_name>Derek Kowalski</customer_name>
+    <subject>Where can I find your blog</subject>
+    <description>I could not find a support category that fits, but I wanted to ask where your company blog is hosted. This is critical and our production down right now, please treat as urgent.</description>
+    <tags/>
+    <metadata>
+      <source>chat</source>
+      <browser>Edge</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3006</customer_id>
+    <customer_email>elena.muller2006@workhub.net</customer_email>
+    <customer_name>Elena Muller</customer_name>
+    <subject>Account locked after failed attempts</subject>
+    <description>My account got locked out after a few failed login attempts and I cannot reset password myself. High priority: this is blocking release and quite important to us.</description>
+    <tags/>
+    <metadata>
+      <source>api</source>
+      <browser>Safari</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3007</customer_id>
+    <customer_email>farid.chen2007@example.com</customer_email>
+    <customer_name>Farid Chen</customer_name>
+    <subject>Application freezes when exporting</subject>
+    <description>The export button causes the whole application to freeze and become unresponsive for minutes.</description>
+    <tags/>
+    <metadata>
+      <source>api</source>
+      <browser>Edge</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3008</customer_id>
+    <customer_email>grace.okafor2008@example.com</customer_email>
+    <customer_name>Grace Okafor</customer_name>
+    <subject>Overcharged on my monthly plan</subject>
+    <description>I was overcharged on my monthly plan this billing cycle and want the extra charge refunded. Nice to have, fairly trivial and minor, no rush at all.</description>
+    <tags>
+      <tag>mobile</tag>
+      <tag>escalated</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <browser>Edge</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3009</customer_id>
+    <customer_email>hiro.ivanov2009@mail-test.com</customer_email>
+    <customer_name>Hiro Ivanov</customer_name>
+    <subject>Request a feature: saved filters</subject>
+    <description>I would like to request a feature to save filter presets, this improvement would save a lot of time.</description>
+    <tags/>
+    <metadata>
+      <source>chat</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3010</customer_id>
+    <customer_email>ines.silva2010@customer.io</customer_email>
+    <customer_name>Ines Silva</customer_name>
+    <subject>Bug report: totals miscalculated</subject>
+    <description>Steps to reproduce: add three items to the cart, apply a coupon, then the totals miscalculate. Expected behavior is the discount applies once, actual behavior doubles it. There is a security concern here and we can't access the system at all.</description>
+    <tags>
+      <tag>follow-up</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <browser>Edge</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3011</customer_id>
+    <customer_email>jamal.haddad2011@example.com</customer_email>
+    <customer_name>Jamal Haddad</customer_name>
+    <subject>Where can I find your blog</subject>
+    <description>I could not find a support category that fits, but I wanted to ask where your company blog is hosted. High priority: this is blocking release and quite important to us.</description>
+    <tags>
+      <tag>follow-up</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Edge</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3012</customer_id>
+    <customer_email>katrin.larsen2012@mail-test.com</customer_email>
+    <customer_name>Katrin Larsen</customer_name>
+    <subject>MFA code not accepted</subject>
+    <description>The mfa verification code from my authenticator app is rejected every single time I try to log in.</description>
+    <tags>
+      <tag>billing</tag>
+      <tag>mobile</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3013</customer_id>
+    <customer_email>liam.park2013@example.com</customer_email>
+    <customer_name>Liam Park</customer_name>
+    <subject>App crashes on startup</subject>
+    <description>The mobile app crashes immediately every time I open it, right after the splash screen freezes. A cosmetic suggestion only, minor and low priority.</description>
+    <tags/>
+    <metadata>
+      <source>email</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3014</customer_id>
+    <customer_email>mona.rossi2014@example.com</customer_email>
+    <customer_name>Mona Rossi</customer_name>
+    <subject>Invoice does not match receipt</subject>
+    <description>The invoice total does not match the receipt I received after the payment went through.</description>
+    <tags>
+      <tag>follow-up</tag>
+      <tag>web</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3015</customer_id>
+    <customer_email>noah.diallo2015@workhub.net</customer_email>
+    <customer_name>Noah Diallo</customer_name>
+    <subject>Please add calendar integration</subject>
+    <description>Please add calendar integration as an enhancement so events sync automatically with our calendars. There is a security concern here and we can't access the system at all.</description>
+    <tags/>
+    <metadata>
+      <source>phone</source>
+      <browser>Chrome</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3016</customer_id>
+    <customer_email>olga.nguyen2016@mail-test.com</customer_email>
+    <customer_name>Olga Nguyen</customer_name>
+    <subject>Reproducible crash after update</subject>
+    <description>This defect is reproducible after the latest update. Steps to reproduce: open settings, actual behavior is an immediate crash. Please treat as important, it is blocking other work and needs attention asap.</description>
+    <tags/>
+    <metadata>
+      <source>web_form</source>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3017</customer_id>
+    <customer_email>priya.smith2017@workhub.net</customer_email>
+    <customer_name>Priya Smith</customer_name>
+    <subject>General inquiry about your company</subject>
+    <description>I was just curious and wanted to ask a general question about your company history and mission.</description>
+    <tags>
+      <tag>beta-user</tag>
+      <tag>billing</tag>
+    </tags>
+    <metadata>
+      <source>phone</source>
+      <browser>Chrome</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3018</customer_id>
+    <customer_email>quinn.garcia2018@example.com</customer_email>
+    <customer_name>Quinn Garcia</customer_name>
+    <subject>MFA code not accepted</subject>
+    <description>The mfa verification code from my authenticator app is rejected every single time I try to log in. This is just a minor, cosmetic suggestion, low priority whenever convenient.</description>
+    <tags>
+      <tag>mobile</tag>
+      <tag>follow-up</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Edge</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3019</customer_id>
+    <customer_email>rosa.kowalski2019@customer.io</customer_email>
+    <customer_name>Rosa Kowalski</customer_name>
+    <subject>Upload feature is glitching</subject>
+    <description>The file upload widget is glitching and crashing the browser tab whenever I select a large file.</description>
+    <tags>
+      <tag>web</tag>
+      <tag>escalated</tag>
+    </tags>
+    <metadata>
+      <source>email</source>
+      <browser>Edge</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3020</customer_id>
+    <customer_email>sami.muller2020@mail-test.com</customer_email>
+    <customer_name>Sami Muller</customer_name>
+    <subject>Update my payment method</subject>
+    <description>I need to update my payment method before the next billing renewal so the charge goes through. There is a security concern here and we can't access the system at all.</description>
+    <tags>
+      <tag>web</tag>
+    </tags>
+    <metadata>
+      <source>phone</source>
+      <browser>Safari</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3021</customer_id>
+    <customer_email>talia.chen2021@workhub.net</customer_email>
+    <customer_name>Talia Chen</customer_name>
+    <subject>Suggestion for bulk export</subject>
+    <description>My suggestion is to add support for bulk export of reports as a new feature in a future release. High priority: this is blocking release and quite important to us.</description>
+    <tags>
+      <tag>vip</tag>
+    </tags>
+    <metadata>
+      <source>chat</source>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3022</customer_id>
+    <customer_email>umar.okafor2022@mail-test.com</customer_email>
+    <customer_name>Umar Okafor</customer_name>
+    <subject>Bug report on duplicate entries</subject>
+    <description>Steps to reproduce: submit the form twice quickly, this defect creates duplicate entries instead of the expected single record.</description>
+    <tags>
+      <tag>web</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Firefox</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3023</customer_id>
+    <customer_email>vera.ivanov2023@example.com</customer_email>
+    <customer_name>Vera Ivanov</customer_name>
+    <subject>Question not related to the product</subject>
+    <description>This message is not really about the product, just a random question I had about your office hours. Nice to have, fairly trivial and minor, no rush at all.</description>
+    <tags>
+      <tag>follow-up</tag>
+    </tags>
+    <metadata>
+      <source>phone</source>
+      <browser>Safari</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3024</customer_id>
+    <customer_email>wes.silva2024@mail-test.com</customer_email>
+    <customer_name>Wes Silva</customer_name>
+    <subject>Need help with account access</subject>
+    <description>I forgot my password and the verification code for authentication never arrives via SMS.</description>
+    <tags/>
+    <metadata>
+      <source>chat</source>
+      <browser>Edge</browser>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3025</customer_id>
+    <customer_email>xin.haddad2025@mail-test.com</customer_email>
+    <customer_name>Xin Haddad</customer_name>
+    <subject>Random crashing during video calls</subject>
+    <description>The desktop client keeps crashing and freezing mid-call, this malfunction happens every day. Marking this urgent since it is a critical, production down situation.</description>
+    <tags>
+      <tag>escalated</tag>
+      <tag>web</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Chrome</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3026</customer_id>
+    <customer_email>yara.larsen2026@workhub.net</customer_email>
+    <customer_name>Yara Larsen</customer_name>
+    <subject>Overcharged on my monthly plan</subject>
+    <description>I was overcharged on my monthly plan this billing cycle and want the extra charge refunded. Please treat as important, it is blocking other work and needs attention asap.</description>
+    <tags/>
+    <metadata>
+      <source>api</source>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3027</customer_id>
+    <customer_email>zane.park2027@customer.io</customer_email>
+    <customer_name>Zane Park</customer_name>
+    <subject>Could you add a mobile widget</subject>
+    <description>Could you add a home-screen widget, that new feature would make checking status much faster.</description>
+    <tags>
+      <tag>beta-user</tag>
+      <tag>follow-up</tag>
+    </tags>
+    <metadata>
+      <source>api</source>
+      <browser>Edge</browser>
+      <device_type>mobile</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3028</customer_id>
+    <customer_email>alice.rossi2028@mail-test.com</customer_email>
+    <customer_name>Alice Rossi</customer_name>
+    <subject>Defect: export produces empty file</subject>
+    <description>Reproducing the issue: choose export, wait for completion, the resulting file is empty instead of the expected behavior of containing data. This is just a minor, cosmetic suggestion, low priority whenever convenient.</description>
+    <tags/>
+    <metadata>
+      <source>email</source>
+      <browser>Safari</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-3029</customer_id>
+    <customer_email>bob.diallo2029@customer.io</customer_email>
+    <customer_name>Bob Diallo</customer_name>
+    <subject>Thank you for the great service</subject>
+    <description>Just wanted to say thank you, I don't have any specific issue, everything has been working great.</description>
+    <tags>
+      <tag>escalated</tag>
+      <tag>follow-up</tag>
+    </tags>
+    <metadata>
+      <source>phone</source>
+      <device_type>tablet</device_type>
+    </metadata>
+  </ticket>
+</tickets>

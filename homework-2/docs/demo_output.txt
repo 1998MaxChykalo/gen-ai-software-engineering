@@ -1,0 +1,149 @@
+==> Starting server (logs: /tmp/hw2-demo-server.log)...
+
+==> 1. Create a ticket with auto-classification
+{
+    "id": "df7a61e8-2407-4268-8363-d2cae36010fe",
+    "customer_id": "demo-001",
+    "customer_email": "demo@example.com",
+    "customer_name": "Demo User",
+    "subject": "Cannot login after password reset",
+    "description": "I reset my password but still cannot access my account. This is urgent, I am locked out.",
+    "category": "account_access",
+    "priority": "urgent",
+    "status": "new",
+    "created_at": "2026-07-16T16:24:11.443869Z",
+    "updated_at": "2026-07-16T16:24:11.443869Z",
+    "resolved_at": null,
+    "assigned_to": null,
+    "tags": [],
+    "metadata": {
+        "source": "api",
+        "browser": null,
+        "device_type": "desktop"
+    },
+    "classification": {
+        "category": "account_access",
+        "priority": "urgent",
+        "confidence": 1.0,
+        "reasoning": "Category 'account_access' matched keywords: login, password, locked out. Priority 'urgent' triggered by: cannot access, urgent, cannot login.",
+        "keywords_found": [
+            "login",
+            "password",
+            "locked out",
+            "cannot access",
+            "urgent",
+            "cannot login"
+        ]
+    }
+}
+
+==> 2. Re-run classification explicitly (POST /tickets/{id}/auto-classify)
+{
+    "category": "account_access",
+    "priority": "urgent",
+    "confidence": 1.0,
+    "reasoning": "Category 'account_access' matched keywords: login, password, locked out. Priority 'urgent' triggered by: cannot access, urgent, cannot login.",
+    "keywords_found": [
+        "login",
+        "password",
+        "locked out",
+        "cannot access",
+        "urgent",
+        "cannot login"
+    ]
+}
+
+==> 3. Bulk import 50 tickets from CSV with auto-classification
+{
+  "total_records": 50,
+  "successful": 50,
+  "failed": 0
+}
+
+==> 4. Import a file with invalid rows — per-record error report
+{
+    "total_records": 7,
+    "successful": 3,
+    "failed": 4,
+    "errors": [
+        {
+            "record": {
+                "customer_id": "CUST-2001",
+                "customer_email": "not-an-email",
+                "customer_name": "Bad Email User",
+                "subject": "App crashes on startup",
+                "description": "The mobile app crashes immediately every time I open it after the splash screen.",
+                "tags": [],
+                "metadata": {
+                    "source": "web_form",
+                    "browser": "Chrome",
+                    "device_type": "desktop"
+                }
+            },
+            "reason": "customer_email: value is not a valid email address: An email address must have an @-sign."
+        },
+        {
+            "record": {
+                "customer_id": "CUST-2002",
+                "customer_email": "short.desc@example.com",
+                "customer_name": "Short Desc User",
+                "subject": "Too short",
+                "description": "Nope",
+                "tags": [],
+                "metadata": {
+                    "source": "web_form",
+                    "browser": "Chrome",
+                    "device_type": "desktop"
+                }
+            },
+            "reason": "description: String should have at least 10 characters"
+        },
+        {
+            "record": {
+                "customer_id": "CUST-2003",
+                "customer_email": "no.subject@example.com",
+                "customer_name": "No Subject User",
+                "description": "This description is long enough but the subject field is completely empty here.",
+                "tags": [],
+                "metadata": {
+                    "source": "web_form",
+                    "browser": "Chrome",
+                    "device_type": "desktop"
+                }
+            },
+            "reason": "subject: Field required"
+        },
+        {
+            "record": {
+                "customer_id": "CUST-2005",
+                "customer_email": "bad.category@example.com",
+                "customer_name": "Bad Category User",
+                "subject": "Feature request for dark mode",
+                "description": "It would be nice to have a dark mode option added to the settings page for the whole app.",
+                "category": "not_a_real_category",
+                "tags": [],
+                "metadata": {
+                    "source": "web_form",
+                    "browser": "Firefox",
+                    "device_type": "desktop"
+                }
+            },
+            "reason": "category: Input should be 'account_access', 'technical_issue', 'billing_question', 'feature_request', 'bug_report' or 'other'"
+        }
+    ]
+}
+
+==> 5. Combined filtering: urgent account_access tickets
+3 shown
+- [urgent] Cannot login after password reset
+- [urgent] Password reset link is broken
+- [urgent] MFA code not accepted
+
+==> 6. Update (manual override) and resolve the demo ticket
+{
+  "status": "resolved",
+  "assigned_to": "agent-42",
+  "resolved_at": "2026-07-16T16:24:11.625949Z"
+}
+
+==> Demo complete.
