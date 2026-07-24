@@ -1,0 +1,8 @@
+customer_id,customer_email,customer_name,subject,description,category,tags,source,browser,device_type
+CUST-2000,valid.user@example.com,Valid User,Cannot log in to my account,I have tried resetting my password three times today but I still cannot log in.,,vip,web_form,Chrome,desktop
+CUST-2001,not-an-email,Bad Email User,App crashes on startup,The mobile app crashes immediately every time I open it after the splash screen.,,,web_form,Chrome,desktop
+CUST-2002,short.desc@example.com,Short Desc User,Too short,Nope,,,web_form,Chrome,desktop
+CUST-2003,no.subject@example.com,No Subject User,,This description is long enough but the subject field is completely empty here.,,,web_form,Chrome,desktop
+CUST-2004,valid.two@example.com,Valid Two,Refund request for duplicate charge,I was charged twice for the same subscription and would like a refund for this duplicate charge.,billing_question,billing,api,Safari,mobile
+CUST-2005,bad.category@example.com,Bad Category User,Feature request for dark mode,It would be nice to have a dark mode option added to the settings page for the whole app.,not_a_real_category,,web_form,Firefox,desktop
+CUST-2006,valid.three@example.com,Valid Three,Bug report on duplicate entries,Steps to reproduce: submit the form twice quickly and this defect creates duplicate entries in the list.,bug_report,beta-user,chat,Chrome,mobile

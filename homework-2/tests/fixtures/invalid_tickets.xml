@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<tickets>
+  <ticket>
+    <customer_id>CUST-4000</customer_id>
+    <customer_email>valid.user@example.com</customer_email>
+    <customer_name>Valid User</customer_name>
+    <subject>Cannot log in to my account</subject>
+    <description>I have tried resetting my password three times today but I still cannot log in.</description>
+    <tags>
+      <tag>vip</tag>
+    </tags>
+    <metadata>
+      <source>web_form</source>
+      <browser>Chrome</browser>
+      <device_type>desktop</device_type>
+    </metadata>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-4001</customer_id>
+    <customer_email>not-an-email</customer_email>
+    <customer_name>Bad Email User</customer_name>
+    <subject>App crashes on startup</subject>
+    <description>The mobile app crashes immediately every time I open it after the splash screen.</description>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-4002</customer_id>
+    <customer_email>short.desc@example.com</customer_email>
+    <customer_name>Short Desc User</customer_name>
+    <subject>Too short</subject>
+    <description>Nope</description>
+  </ticket>
+  <ticket>
+    <customer_email>missing.id@example.com</customer_email>
+    <customer_name>Missing Id User</customer_name>
+    <subject>Missing the customer_id field entirely</subject>
+    <description>This record intentionally omits the required customer_id element to test validation.</description>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-4004</customer_id>
+    <customer_email>bad.category@example.com</customer_email>
+    <customer_name>Bad Category User</customer_name>
+    <subject>Feature request for dark mode</subject>
+    <description>It would be nice to have a dark mode option added to the settings page for the whole app.</description>
+    <category>not_a_real_category</category>
+  </ticket>
+  <ticket>
+    <customer_id>CUST-4005</customer_id>
+    <customer_email>valid.two@example.com</customer_email>
+    <customer_name>Valid Two</customer_name>
+    <subject>Refund request for duplicate charge</subject>
+    <description>I was charged twice for the same subscription and would like a refund for this charge.</description>
+    <category>billing_question</category>
+    <tags>
+      <tag>billing</tag>
+    </tags>
+  </ticket>
+</tickets>

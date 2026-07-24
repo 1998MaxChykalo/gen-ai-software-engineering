@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<tickets>
+  <ticket>
+    <customer_id>CUST-6000</customer_id>
+    <customer_email>broken@example.com</customer_email>
+    <subject>Unclosed tag test
+  </ticket>
+</tickets>
