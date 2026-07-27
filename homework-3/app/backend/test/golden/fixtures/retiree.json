@@ -1,0 +1,26 @@
+{
+  "persona": "retiree",
+  "evaluationMonth": "2026-01",
+  "horizonMonths": 120,
+  "incomes": [
+    { "id": "income-pension", "kind": "passive", "amountMinorCents": 220000, "annualGrowthRateBps": 100 }
+  ],
+  "expenses": [
+    { "id": "expense-living", "kind": "fixed", "amountMinorCents": 250000 }
+  ],
+  "assets": [
+    { "id": "asset-investment", "kind": "investment", "valueMinorCents": 40000000, "annualReturnRateBps": 400 }
+  ],
+  "liabilities": [],
+  "goals": [
+    {
+      "id": "goal-legacy-fund",
+      "targetAmountMinorCents": 5000000,
+      "targetMonth": null,
+      "priority": 1,
+      "status": "active",
+      "contribution": null
+    }
+  ],
+  "assumptions": { "inflationRateBps": 200, "defaultReturnRateBps": 400, "incomeGrowthRateBps": 100 }
+}

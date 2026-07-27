@@ -1,0 +1,250 @@
+// Horizon — Prisma schema
+//
+// DEVIATION from specification.md §5.1 (approved, see backend README):
+// datasource provider is "sqlite" for local dev/demo/test on a machine with
+// no Docker/Postgres/Redis. The schema is kept portable for a future switch
+// to "postgresql": no Postgres-only types are used, IDs are app-generated
+// UUIDv7 strings (not a DB-native uuid type), and all money columns are
+// BigInt ("*_minor", euro cents) exactly as the spec requires.
+//
+// Rates (interest/inflation/growth/return) are stored as integer basis
+// points (1% = 100 bps) for exactness; the API boundary converts these to
+// the contractual decimal strings (e.g. 250 -> "2.5").
+//
+// NOTE: Prisma's SQLite connector does not support native `enum`. All enum
+// domains (role, kind, status, type) are therefore plain String columns,
+// constrained and typed by TypeScript union types + class-validator
+// `@IsIn(...)` at the DTO boundary (see src/modules/*/dto). Switching to
+// Postgres later can promote these back to native Prisma enums.
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String   @id
+  email        String   @unique
+  passwordHash String
+  role         String   @default("user")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  profile Profile?
+
+  @@map("users")
+}
+
+model Profile {
+  id                   String   @id
+  userId               String   @unique
+  version              Int      @default(1)
+  inflationRateBps     Int      @default(200)
+  defaultReturnRateBps Int      @default(500)
+  incomeGrowthRateBps  Int      @default(250)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  user        User           @relation(fields: [userId], references: [id], onDelete: Restrict)
+  incomes     IncomeSource[]
+  expenses    Expense[]
+  assets      Asset[]
+  liabilities Liability[]
+
+  @@map("profiles")
+}
+
+/// kind: 'active' | 'passive'
+model IncomeSource {
+  id                  String    @id
+  userId              String
+  name                String
+  kind                String
+  amountMinor         BigInt
+  currency            String    @default("EUR")
+  annualGrowthRateBps Int       @default(0)
+  archivedAt          DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  profile Profile @relation(fields: [userId], references: [userId], onDelete: Restrict)
+
+  @@index([userId])
+  @@map("income_sources")
+}
+
+/// kind: 'fixed' | 'variable'
+model Expense {
+  id          String    @id
+  userId      String
+  name        String
+  kind        String
+  amountMinor BigInt
+  currency    String    @default("EUR")
+  archivedAt  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  profile Profile @relation(fields: [userId], references: [userId], onDelete: Restrict)
+
+  @@index([userId])
+  @@map("expenses")
+}
+
+/// kind: 'cash' | 'investment' | 'real_estate'
+model Asset {
+  id                  String    @id
+  userId              String
+  name                String
+  kind                String
+  valueMinor          BigInt
+  currency            String    @default("EUR")
+  annualReturnRateBps Int       @default(0)
+  archivedAt          DateTime?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  profile Profile @relation(fields: [userId], references: [userId], onDelete: Restrict)
+
+  @@index([userId])
+  @@map("assets")
+}
+
+/// kind: 'loan' | 'mortgage' | 'credit_card'
+model Liability {
+  id                    String    @id
+  userId                String
+  name                  String
+  kind                  String
+  balanceMinor          BigInt
+  currency              String    @default("EUR")
+  annualInterestRateBps Int       @default(0)
+  monthlyPaymentMinor   BigInt
+  archivedAt            DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  profile Profile @relation(fields: [userId], references: [userId], onDelete: Restrict)
+
+  @@index([userId])
+  @@map("liabilities")
+}
+
+/// type: 'house'|'car'|'emergency_fund'|'net_worth'|'financial_independence'|'retirement'|'vacation'|'custom'
+/// status: 'active'|'paused'|'achieved'|'overdue'|'archived'
+model Goal {
+  id                String   @id
+  userId            String
+  name              String
+  type              String
+  targetAmountMinor BigInt
+  targetMonth       String?
+  priority          Int
+  status            String   @default("active")
+  version           Int      @default(1)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  contribution GoalContribution?
+
+  @@index([userId])
+  @@map("goals")
+}
+
+/// kind: 'one_time' | 'recurring_monthly'
+model GoalContribution {
+  id           String   @id
+  goalId       String   @unique
+  kind         String
+  amountMinor  BigInt
+  startMonth   String
+  endMonth     String?
+  allowDeficit Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  goal Goal @relation(fields: [goalId], references: [id], onDelete: Cascade)
+
+  @@map("goal_contributions")
+}
+
+model OutboxEvent {
+  id            String    @id
+  userId        String
+  aggregateType String
+  aggregateId   String
+  eventType     String
+  payload       String
+  createdAt     DateTime  @default(now())
+  processedAt   DateTime?
+  attempts      Int       @default(0)
+
+  @@index([userId, processedAt])
+  @@map("outbox_events")
+}
+
+model ForecastSnapshot {
+  id              String   @id
+  userId          String
+  inputHash       String
+  engineVersion   String
+  evaluationMonth String
+  inputsEcho      String
+  monthSeries     String
+  goalOutcomes    String
+  createdAt       DateTime @default(now())
+
+  @@unique([userId, inputHash, engineVersion])
+  @@index([userId, createdAt])
+  @@map("forecast_snapshots")
+}
+
+/// status: 'active' | 'invalid' | 'archived'
+model Scenario {
+  id        String   @id
+  userId    String
+  name      String
+  deltas    String
+  status    String   @default("active")
+  version   Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@map("scenarios")
+}
+
+model AuditEvent {
+  id            String   @id
+  actorId       String
+  actorRole     String
+  occurredAt    DateTime @default(now())
+  entityType    String
+  entityId      String
+  action        String
+  before        String?
+  after         String?
+  justification String?
+  requestId     String?
+
+  @@index([entityType, entityId])
+  @@index([actorId])
+  @@map("audit_events")
+}
+
+model IdempotencyKey {
+  userId         String
+  key            String
+  method         String
+  path           String
+  responseStatus Int
+  responseBody   String
+  createdAt      DateTime @default(now())
+
+  @@id([userId, key])
+  @@map("idempotency_keys")
+}

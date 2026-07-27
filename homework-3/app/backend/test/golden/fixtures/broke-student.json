@@ -1,0 +1,27 @@
+{
+  "persona": "broke-student",
+  "evaluationMonth": "2026-01",
+  "horizonMonths": 24,
+  "incomes": [
+    { "id": "income-parttime", "kind": "active", "amountMinorCents": 90000, "annualGrowthRateBps": 0 }
+  ],
+  "expenses": [
+    { "id": "expense-rent", "kind": "fixed", "amountMinorCents": 70000 },
+    { "id": "expense-living", "kind": "variable", "amountMinorCents": 30000 }
+  ],
+  "assets": [
+    { "id": "asset-cash", "kind": "cash", "valueMinorCents": 20000, "annualReturnRateBps": 0 }
+  ],
+  "liabilities": [],
+  "goals": [
+    {
+      "id": "goal-laptop",
+      "targetAmountMinorCents": 100000,
+      "targetMonth": null,
+      "priority": 1,
+      "status": "active",
+      "contribution": null
+    }
+  ],
+  "assumptions": { "inflationRateBps": 200, "defaultReturnRateBps": 500, "incomeGrowthRateBps": 0 }
+}
