@@ -1,0 +1,1115 @@
+{
+  "persona": "median-family",
+  "engineVersion": "1.0.0",
+  "evaluationMonth": "2026-01",
+  "horizonMonths": 120,
+  "inputHash": "0c3e1399700a00f9b20935ed4935d49f37f0a10f6c3729286ba06b69f3ed2e17",
+  "goalOutcomes": [
+    {
+      "goalId": "goal-emergency-fund",
+      "status": "on_track",
+      "completionMonth": "2028-10",
+      "monthsLate": null,
+      "fundedMinor": "30000",
+      "percentComplete": "3.0"
+    },
+    {
+      "goalId": "goal-house-down-payment",
+      "status": "on_track",
+      "completionMonth": "2034-06",
+      "monthsLate": null,
+      "fundedMinor": "32000",
+      "percentComplete": "0.5"
+    },
+    {
+      "goalId": "goal-vacation",
+      "status": "late",
+      "completionMonth": "2029-09",
+      "monthsLate": 38,
+      "fundedMinor": "0",
+      "percentComplete": "0.0"
+    }
+  ],
+  "months": [
+    {
+      "month": "2026-01",
+      "netWorthMinor": "2894088",
+      "cashFlowMinor": "62000",
+      "incomeMinor": "380000",
+      "expensesMinor": "290000",
+      "assetsMinor": "3770963",
+      "liabilitiesMinor": "876875"
+    },
+    {
+      "month": "2026-02",
+      "netWorthMinor": "2988642",
+      "cashFlowMinor": "62304",
+      "incomeMinor": "380783",
+      "expensesMinor": "290479",
+      "assetsMinor": "3842267",
+      "liabilitiesMinor": "853625"
+    },
+    {
+      "month": "2026-03",
+      "netWorthMinor": "3083663",
+      "cashFlowMinor": "62609",
+      "incomeMinor": "381567",
+      "expensesMinor": "290958",
+      "assetsMinor": "3913912",
+      "liabilitiesMinor": "830249"
+    },
+    {
+      "month": "2026-04",
+      "netWorthMinor": "3179153",
+      "cashFlowMinor": "62914",
+      "incomeMinor": "382353",
+      "expensesMinor": "291439",
+      "assetsMinor": "3985899",
+      "liabilitiesMinor": "806746"
+    },
+    {
+      "month": "2026-05",
+      "netWorthMinor": "3275114",
+      "cashFlowMinor": "63221",
+      "incomeMinor": "383141",
+      "expensesMinor": "291920",
+      "assetsMinor": "4058230",
+      "liabilitiesMinor": "783116"
+    },
+    {
+      "month": "2026-06",
+      "netWorthMinor": "3371546",
+      "cashFlowMinor": "63527",
+      "incomeMinor": "383930",
+      "expensesMinor": "292403",
+      "assetsMinor": "4130904",
+      "liabilitiesMinor": "759358"
+    },
+    {
+      "month": "2026-07",
+      "netWorthMinor": "3468452",
+      "cashFlowMinor": "63835",
+      "incomeMinor": "384721",
+      "expensesMinor": "292886",
+      "assetsMinor": "4203923",
+      "liabilitiesMinor": "735471"
+    },
+    {
+      "month": "2026-08",
+      "netWorthMinor": "3565834",
+      "cashFlowMinor": "64144",
+      "incomeMinor": "385513",
+      "expensesMinor": "293369",
+      "assetsMinor": "4277289",
+      "liabilitiesMinor": "711455"
+    },
+    {
+      "month": "2026-09",
+      "netWorthMinor": "3663692",
+      "cashFlowMinor": "64453",
+      "incomeMinor": "386307",
+      "expensesMinor": "293854",
+      "assetsMinor": "4351001",
+      "liabilitiesMinor": "687309"
+    },
+    {
+      "month": "2026-10",
+      "netWorthMinor": "3762030",
+      "cashFlowMinor": "64764",
+      "incomeMinor": "387103",
+      "expensesMinor": "294339",
+      "assetsMinor": "4425062",
+      "liabilitiesMinor": "663032"
+    },
+    {
+      "month": "2026-11",
+      "netWorthMinor": "3860849",
+      "cashFlowMinor": "65075",
+      "incomeMinor": "387900",
+      "expensesMinor": "294825",
+      "assetsMinor": "4499472",
+      "liabilitiesMinor": "638623"
+    },
+    {
+      "month": "2026-12",
+      "netWorthMinor": "3960150",
+      "cashFlowMinor": "65387",
+      "incomeMinor": "388699",
+      "expensesMinor": "295312",
+      "assetsMinor": "4574232",
+      "liabilitiesMinor": "614082"
+    },
+    {
+      "month": "2027-01",
+      "netWorthMinor": "4059935",
+      "cashFlowMinor": "65700",
+      "incomeMinor": "389500",
+      "expensesMinor": "295800",
+      "assetsMinor": "4649343",
+      "liabilitiesMinor": "589408"
+    },
+    {
+      "month": "2027-02",
+      "netWorthMinor": "4160206",
+      "cashFlowMinor": "66014",
+      "incomeMinor": "390302",
+      "expensesMinor": "296288",
+      "assetsMinor": "4724807",
+      "liabilitiesMinor": "564601"
+    },
+    {
+      "month": "2027-03",
+      "netWorthMinor": "4260964",
+      "cashFlowMinor": "66328",
+      "incomeMinor": "391106",
+      "expensesMinor": "296778",
+      "assetsMinor": "4800623",
+      "liabilitiesMinor": "539659"
+    },
+    {
+      "month": "2027-04",
+      "netWorthMinor": "4362212",
+      "cashFlowMinor": "66644",
+      "incomeMinor": "391912",
+      "expensesMinor": "297268",
+      "assetsMinor": "4876794",
+      "liabilitiesMinor": "514582"
+    },
+    {
+      "month": "2027-05",
+      "netWorthMinor": "4463951",
+      "cashFlowMinor": "66960",
+      "incomeMinor": "392719",
+      "expensesMinor": "297759",
+      "assetsMinor": "4953320",
+      "liabilitiesMinor": "489369"
+    },
+    {
+      "month": "2027-06",
+      "netWorthMinor": "4566182",
+      "cashFlowMinor": "67277",
+      "incomeMinor": "393528",
+      "expensesMinor": "298251",
+      "assetsMinor": "5030202",
+      "liabilitiesMinor": "464020"
+    },
+    {
+      "month": "2027-07",
+      "netWorthMinor": "4668909",
+      "cashFlowMinor": "67596",
+      "incomeMinor": "394339",
+      "expensesMinor": "298743",
+      "assetsMinor": "5107442",
+      "liabilitiesMinor": "438533"
+    },
+    {
+      "month": "2027-08",
+      "netWorthMinor": "4772131",
+      "cashFlowMinor": "67914",
+      "incomeMinor": "395151",
+      "expensesMinor": "299237",
+      "assetsMinor": "5185039",
+      "liabilitiesMinor": "412908"
+    },
+    {
+      "month": "2027-09",
+      "netWorthMinor": "4875850",
+      "cashFlowMinor": "68234",
+      "incomeMinor": "395965",
+      "expensesMinor": "299731",
+      "assetsMinor": "5262995",
+      "liabilitiesMinor": "387145"
+    },
+    {
+      "month": "2027-10",
+      "netWorthMinor": "4980070",
+      "cashFlowMinor": "68555",
+      "incomeMinor": "396781",
+      "expensesMinor": "300226",
+      "assetsMinor": "5341312",
+      "liabilitiesMinor": "361242"
+    },
+    {
+      "month": "2027-11",
+      "netWorthMinor": "5084791",
+      "cashFlowMinor": "68876",
+      "incomeMinor": "397598",
+      "expensesMinor": "300722",
+      "assetsMinor": "5419990",
+      "liabilitiesMinor": "335199"
+    },
+    {
+      "month": "2027-12",
+      "netWorthMinor": "5190016",
+      "cashFlowMinor": "69199",
+      "incomeMinor": "398417",
+      "expensesMinor": "301218",
+      "assetsMinor": "5499031",
+      "liabilitiesMinor": "309015"
+    },
+    {
+      "month": "2028-01",
+      "netWorthMinor": "5295745",
+      "cashFlowMinor": "69521",
+      "incomeMinor": "399237",
+      "expensesMinor": "301716",
+      "assetsMinor": "5578434",
+      "liabilitiesMinor": "282689"
+    },
+    {
+      "month": "2028-02",
+      "netWorthMinor": "5401982",
+      "cashFlowMinor": "69846",
+      "incomeMinor": "400060",
+      "expensesMinor": "302214",
+      "assetsMinor": "5658202",
+      "liabilitiesMinor": "256220"
+    },
+    {
+      "month": "2028-03",
+      "netWorthMinor": "5508727",
+      "cashFlowMinor": "70171",
+      "incomeMinor": "400884",
+      "expensesMinor": "302713",
+      "assetsMinor": "5738335",
+      "liabilitiesMinor": "229608"
+    },
+    {
+      "month": "2028-04",
+      "netWorthMinor": "5615982",
+      "cashFlowMinor": "70496",
+      "incomeMinor": "401710",
+      "expensesMinor": "303214",
+      "assetsMinor": "5818834",
+      "liabilitiesMinor": "202852"
+    },
+    {
+      "month": "2028-05",
+      "netWorthMinor": "5723750",
+      "cashFlowMinor": "70823",
+      "incomeMinor": "402537",
+      "expensesMinor": "303714",
+      "assetsMinor": "5899701",
+      "liabilitiesMinor": "175951"
+    },
+    {
+      "month": "2028-06",
+      "netWorthMinor": "5832032",
+      "cashFlowMinor": "71150",
+      "incomeMinor": "403366",
+      "expensesMinor": "304216",
+      "assetsMinor": "5980936",
+      "liabilitiesMinor": "148904"
+    },
+    {
+      "month": "2028-07",
+      "netWorthMinor": "5940830",
+      "cashFlowMinor": "71479",
+      "incomeMinor": "404197",
+      "expensesMinor": "304718",
+      "assetsMinor": "6062541",
+      "liabilitiesMinor": "121711"
+    },
+    {
+      "month": "2028-08",
+      "netWorthMinor": "6050147",
+      "cashFlowMinor": "71809",
+      "incomeMinor": "405030",
+      "expensesMinor": "305221",
+      "assetsMinor": "6144517",
+      "liabilitiesMinor": "94370"
+    },
+    {
+      "month": "2028-09",
+      "netWorthMinor": "6159982",
+      "cashFlowMinor": "72138",
+      "incomeMinor": "405864",
+      "expensesMinor": "305726",
+      "assetsMinor": "6226863",
+      "liabilitiesMinor": "66881"
+    },
+    {
+      "month": "2028-10",
+      "netWorthMinor": "6270340",
+      "cashFlowMinor": "72470",
+      "incomeMinor": "406700",
+      "expensesMinor": "306230",
+      "assetsMinor": "6309583",
+      "liabilitiesMinor": "39243"
+    },
+    {
+      "month": "2028-11",
+      "netWorthMinor": "6381220",
+      "cashFlowMinor": "72801",
+      "incomeMinor": "407538",
+      "expensesMinor": "306737",
+      "assetsMinor": "6392676",
+      "liabilitiesMinor": "11456"
+    },
+    {
+      "month": "2028-12",
+      "netWorthMinor": "6492627",
+      "cashFlowMinor": "89617",
+      "incomeMinor": "408377",
+      "expensesMinor": "307242",
+      "assetsMinor": "6492627",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-01",
+      "netWorthMinor": "6604471",
+      "cashFlowMinor": "101468",
+      "incomeMinor": "409218",
+      "expensesMinor": "307750",
+      "assetsMinor": "6604471",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-02",
+      "netWorthMinor": "6716691",
+      "cashFlowMinor": "101802",
+      "incomeMinor": "410061",
+      "expensesMinor": "308259",
+      "assetsMinor": "6716691",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-03",
+      "netWorthMinor": "6829290",
+      "cashFlowMinor": "102138",
+      "incomeMinor": "410906",
+      "expensesMinor": "308768",
+      "assetsMinor": "6829290",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-04",
+      "netWorthMinor": "6942268",
+      "cashFlowMinor": "102475",
+      "incomeMinor": "411752",
+      "expensesMinor": "309277",
+      "assetsMinor": "6942268",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-05",
+      "netWorthMinor": "7055627",
+      "cashFlowMinor": "102813",
+      "incomeMinor": "412601",
+      "expensesMinor": "309788",
+      "assetsMinor": "7055627",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-06",
+      "netWorthMinor": "7169366",
+      "cashFlowMinor": "103150",
+      "incomeMinor": "413450",
+      "expensesMinor": "310300",
+      "assetsMinor": "7169366",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-07",
+      "netWorthMinor": "7283487",
+      "cashFlowMinor": "103489",
+      "incomeMinor": "414302",
+      "expensesMinor": "310813",
+      "assetsMinor": "7283487",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-08",
+      "netWorthMinor": "7397991",
+      "cashFlowMinor": "103829",
+      "incomeMinor": "415155",
+      "expensesMinor": "311326",
+      "assetsMinor": "7397991",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-09",
+      "netWorthMinor": "7512881",
+      "cashFlowMinor": "104171",
+      "incomeMinor": "416011",
+      "expensesMinor": "311840",
+      "assetsMinor": "7512881",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-10",
+      "netWorthMinor": "7628157",
+      "cashFlowMinor": "104513",
+      "incomeMinor": "416868",
+      "expensesMinor": "312355",
+      "assetsMinor": "7628157",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-11",
+      "netWorthMinor": "7743818",
+      "cashFlowMinor": "104855",
+      "incomeMinor": "417726",
+      "expensesMinor": "312871",
+      "assetsMinor": "7743818",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2029-12",
+      "netWorthMinor": "7859867",
+      "cashFlowMinor": "105199",
+      "incomeMinor": "418587",
+      "expensesMinor": "313388",
+      "assetsMinor": "7859867",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-01",
+      "netWorthMinor": "7976306",
+      "cashFlowMinor": "105544",
+      "incomeMinor": "419449",
+      "expensesMinor": "313905",
+      "assetsMinor": "7976306",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-02",
+      "netWorthMinor": "8093134",
+      "cashFlowMinor": "105889",
+      "incomeMinor": "420313",
+      "expensesMinor": "314424",
+      "assetsMinor": "8093134",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-03",
+      "netWorthMinor": "8210354",
+      "cashFlowMinor": "106236",
+      "incomeMinor": "421179",
+      "expensesMinor": "314943",
+      "assetsMinor": "8210354",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-04",
+      "netWorthMinor": "8327965",
+      "cashFlowMinor": "106583",
+      "incomeMinor": "422046",
+      "expensesMinor": "315463",
+      "assetsMinor": "8327965",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-05",
+      "netWorthMinor": "8445970",
+      "cashFlowMinor": "106932",
+      "incomeMinor": "422916",
+      "expensesMinor": "315984",
+      "assetsMinor": "8445970",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-06",
+      "netWorthMinor": "8564369",
+      "cashFlowMinor": "107281",
+      "incomeMinor": "423787",
+      "expensesMinor": "316506",
+      "assetsMinor": "8564369",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-07",
+      "netWorthMinor": "8683164",
+      "cashFlowMinor": "107631",
+      "incomeMinor": "424660",
+      "expensesMinor": "317029",
+      "assetsMinor": "8683164",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-08",
+      "netWorthMinor": "8802354",
+      "cashFlowMinor": "107981",
+      "incomeMinor": "425534",
+      "expensesMinor": "317553",
+      "assetsMinor": "8802354",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-09",
+      "netWorthMinor": "8921943",
+      "cashFlowMinor": "108334",
+      "incomeMinor": "426411",
+      "expensesMinor": "318077",
+      "assetsMinor": "8921943",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-10",
+      "netWorthMinor": "9041930",
+      "cashFlowMinor": "108686",
+      "incomeMinor": "427289",
+      "expensesMinor": "318603",
+      "assetsMinor": "9041930",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-11",
+      "netWorthMinor": "9162317",
+      "cashFlowMinor": "109040",
+      "incomeMinor": "428169",
+      "expensesMinor": "319129",
+      "assetsMinor": "9162317",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2030-12",
+      "netWorthMinor": "9283105",
+      "cashFlowMinor": "109395",
+      "incomeMinor": "429051",
+      "expensesMinor": "319656",
+      "assetsMinor": "9283105",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-01",
+      "netWorthMinor": "9404295",
+      "cashFlowMinor": "109751",
+      "incomeMinor": "429935",
+      "expensesMinor": "320184",
+      "assetsMinor": "9404295",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-02",
+      "netWorthMinor": "9525890",
+      "cashFlowMinor": "110109",
+      "incomeMinor": "430821",
+      "expensesMinor": "320712",
+      "assetsMinor": "9525890",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-03",
+      "netWorthMinor": "9647889",
+      "cashFlowMinor": "110466",
+      "incomeMinor": "431708",
+      "expensesMinor": "321242",
+      "assetsMinor": "9647889",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-04",
+      "netWorthMinor": "9770293",
+      "cashFlowMinor": "110824",
+      "incomeMinor": "432597",
+      "expensesMinor": "321773",
+      "assetsMinor": "9770293",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-05",
+      "netWorthMinor": "9893104",
+      "cashFlowMinor": "111184",
+      "incomeMinor": "433488",
+      "expensesMinor": "322304",
+      "assetsMinor": "9893104",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-06",
+      "netWorthMinor": "10016322",
+      "cashFlowMinor": "111544",
+      "incomeMinor": "434381",
+      "expensesMinor": "322837",
+      "assetsMinor": "10016322",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-07",
+      "netWorthMinor": "10139951",
+      "cashFlowMinor": "111907",
+      "incomeMinor": "435276",
+      "expensesMinor": "323369",
+      "assetsMinor": "10139951",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-08",
+      "netWorthMinor": "10263990",
+      "cashFlowMinor": "112269",
+      "incomeMinor": "436173",
+      "expensesMinor": "323904",
+      "assetsMinor": "10263990",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-09",
+      "netWorthMinor": "10388441",
+      "cashFlowMinor": "112633",
+      "incomeMinor": "437071",
+      "expensesMinor": "324438",
+      "assetsMinor": "10388441",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-10",
+      "netWorthMinor": "10513304",
+      "cashFlowMinor": "112997",
+      "incomeMinor": "437971",
+      "expensesMinor": "324974",
+      "assetsMinor": "10513304",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-11",
+      "netWorthMinor": "10638581",
+      "cashFlowMinor": "113363",
+      "incomeMinor": "438874",
+      "expensesMinor": "325511",
+      "assetsMinor": "10638581",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2031-12",
+      "netWorthMinor": "10764274",
+      "cashFlowMinor": "113730",
+      "incomeMinor": "439778",
+      "expensesMinor": "326048",
+      "assetsMinor": "10764274",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-01",
+      "netWorthMinor": "10890381",
+      "cashFlowMinor": "114096",
+      "incomeMinor": "440683",
+      "expensesMinor": "326587",
+      "assetsMinor": "10890381",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-02",
+      "netWorthMinor": "11016906",
+      "cashFlowMinor": "114465",
+      "incomeMinor": "441591",
+      "expensesMinor": "327126",
+      "assetsMinor": "11016906",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-03",
+      "netWorthMinor": "11143849",
+      "cashFlowMinor": "114834",
+      "incomeMinor": "442501",
+      "expensesMinor": "327667",
+      "assetsMinor": "11143849",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-04",
+      "netWorthMinor": "11271212",
+      "cashFlowMinor": "115204",
+      "incomeMinor": "443412",
+      "expensesMinor": "328208",
+      "assetsMinor": "11271212",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-05",
+      "netWorthMinor": "11398996",
+      "cashFlowMinor": "115576",
+      "incomeMinor": "444326",
+      "expensesMinor": "328750",
+      "assetsMinor": "11398996",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-06",
+      "netWorthMinor": "11527202",
+      "cashFlowMinor": "115948",
+      "incomeMinor": "445241",
+      "expensesMinor": "329293",
+      "assetsMinor": "11527202",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-07",
+      "netWorthMinor": "11655831",
+      "cashFlowMinor": "116321",
+      "incomeMinor": "446158",
+      "expensesMinor": "329837",
+      "assetsMinor": "11655831",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-08",
+      "netWorthMinor": "11784884",
+      "cashFlowMinor": "116695",
+      "incomeMinor": "447077",
+      "expensesMinor": "330382",
+      "assetsMinor": "11784884",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-09",
+      "netWorthMinor": "11914362",
+      "cashFlowMinor": "117070",
+      "incomeMinor": "447998",
+      "expensesMinor": "330928",
+      "assetsMinor": "11914362",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-10",
+      "netWorthMinor": "12044268",
+      "cashFlowMinor": "117447",
+      "incomeMinor": "448921",
+      "expensesMinor": "331474",
+      "assetsMinor": "12044268",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-11",
+      "netWorthMinor": "12174602",
+      "cashFlowMinor": "117824",
+      "incomeMinor": "449845",
+      "expensesMinor": "332021",
+      "assetsMinor": "12174602",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2032-12",
+      "netWorthMinor": "12305366",
+      "cashFlowMinor": "118203",
+      "incomeMinor": "450772",
+      "expensesMinor": "332569",
+      "assetsMinor": "12305366",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-01",
+      "netWorthMinor": "12436560",
+      "cashFlowMinor": "118582",
+      "incomeMinor": "451701",
+      "expensesMinor": "333119",
+      "assetsMinor": "12436560",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-02",
+      "netWorthMinor": "12568185",
+      "cashFlowMinor": "118962",
+      "incomeMinor": "452631",
+      "expensesMinor": "333669",
+      "assetsMinor": "12568185",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-03",
+      "netWorthMinor": "12700243",
+      "cashFlowMinor": "119343",
+      "incomeMinor": "453563",
+      "expensesMinor": "334220",
+      "assetsMinor": "12700243",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-04",
+      "netWorthMinor": "12832736",
+      "cashFlowMinor": "119726",
+      "incomeMinor": "454498",
+      "expensesMinor": "334772",
+      "assetsMinor": "12832736",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-05",
+      "netWorthMinor": "12965664",
+      "cashFlowMinor": "120109",
+      "incomeMinor": "455434",
+      "expensesMinor": "335325",
+      "assetsMinor": "12965664",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-06",
+      "netWorthMinor": "13099028",
+      "cashFlowMinor": "120493",
+      "incomeMinor": "456372",
+      "expensesMinor": "335879",
+      "assetsMinor": "13099028",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-07",
+      "netWorthMinor": "13232829",
+      "cashFlowMinor": "120878",
+      "incomeMinor": "457312",
+      "expensesMinor": "336434",
+      "assetsMinor": "13232829",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-08",
+      "netWorthMinor": "13367070",
+      "cashFlowMinor": "121265",
+      "incomeMinor": "458254",
+      "expensesMinor": "336989",
+      "assetsMinor": "13367070",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-09",
+      "netWorthMinor": "13501751",
+      "cashFlowMinor": "121652",
+      "incomeMinor": "459198",
+      "expensesMinor": "337546",
+      "assetsMinor": "13501751",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-10",
+      "netWorthMinor": "13636874",
+      "cashFlowMinor": "122041",
+      "incomeMinor": "460144",
+      "expensesMinor": "338103",
+      "assetsMinor": "13636874",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-11",
+      "netWorthMinor": "13772439",
+      "cashFlowMinor": "122430",
+      "incomeMinor": "461092",
+      "expensesMinor": "338662",
+      "assetsMinor": "13772439",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2033-12",
+      "netWorthMinor": "13908448",
+      "cashFlowMinor": "122820",
+      "incomeMinor": "462041",
+      "expensesMinor": "339221",
+      "assetsMinor": "13908448",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-01",
+      "netWorthMinor": "14044902",
+      "cashFlowMinor": "123211",
+      "incomeMinor": "462993",
+      "expensesMinor": "339782",
+      "assetsMinor": "14044902",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-02",
+      "netWorthMinor": "14181802",
+      "cashFlowMinor": "123604",
+      "incomeMinor": "463947",
+      "expensesMinor": "340343",
+      "assetsMinor": "14181802",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-03",
+      "netWorthMinor": "14319150",
+      "cashFlowMinor": "123997",
+      "incomeMinor": "464902",
+      "expensesMinor": "340905",
+      "assetsMinor": "14319150",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-04",
+      "netWorthMinor": "14456948",
+      "cashFlowMinor": "124393",
+      "incomeMinor": "465860",
+      "expensesMinor": "341467",
+      "assetsMinor": "14456948",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-05",
+      "netWorthMinor": "14595197",
+      "cashFlowMinor": "124789",
+      "incomeMinor": "466820",
+      "expensesMinor": "342031",
+      "assetsMinor": "14595197",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-06",
+      "netWorthMinor": "14733897",
+      "cashFlowMinor": "125185",
+      "incomeMinor": "467781",
+      "expensesMinor": "342596",
+      "assetsMinor": "14733897",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-07",
+      "netWorthMinor": "14873050",
+      "cashFlowMinor": "125583",
+      "incomeMinor": "468745",
+      "expensesMinor": "343162",
+      "assetsMinor": "14873050",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-08",
+      "netWorthMinor": "15012656",
+      "cashFlowMinor": "125981",
+      "incomeMinor": "469710",
+      "expensesMinor": "343729",
+      "assetsMinor": "15012656",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-09",
+      "netWorthMinor": "15152717",
+      "cashFlowMinor": "126381",
+      "incomeMinor": "470678",
+      "expensesMinor": "344297",
+      "assetsMinor": "15152717",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-10",
+      "netWorthMinor": "15293235",
+      "cashFlowMinor": "126782",
+      "incomeMinor": "471647",
+      "expensesMinor": "344865",
+      "assetsMinor": "15293235",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-11",
+      "netWorthMinor": "15434211",
+      "cashFlowMinor": "127184",
+      "incomeMinor": "472619",
+      "expensesMinor": "345435",
+      "assetsMinor": "15434211",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2034-12",
+      "netWorthMinor": "15575646",
+      "cashFlowMinor": "127587",
+      "incomeMinor": "473592",
+      "expensesMinor": "346005",
+      "assetsMinor": "15575646",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-01",
+      "netWorthMinor": "15717542",
+      "cashFlowMinor": "127991",
+      "incomeMinor": "474568",
+      "expensesMinor": "346577",
+      "assetsMinor": "15717542",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-02",
+      "netWorthMinor": "15859899",
+      "cashFlowMinor": "128396",
+      "incomeMinor": "475545",
+      "expensesMinor": "347149",
+      "assetsMinor": "15859899",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-03",
+      "netWorthMinor": "16002719",
+      "cashFlowMinor": "128802",
+      "incomeMinor": "476525",
+      "expensesMinor": "347723",
+      "assetsMinor": "16002719",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-04",
+      "netWorthMinor": "16146005",
+      "cashFlowMinor": "129211",
+      "incomeMinor": "477507",
+      "expensesMinor": "348296",
+      "assetsMinor": "16146005",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-05",
+      "netWorthMinor": "16289756",
+      "cashFlowMinor": "129618",
+      "incomeMinor": "478490",
+      "expensesMinor": "348872",
+      "assetsMinor": "16289756",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-06",
+      "netWorthMinor": "16433973",
+      "cashFlowMinor": "130027",
+      "incomeMinor": "479476",
+      "expensesMinor": "349449",
+      "assetsMinor": "16433973",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-07",
+      "netWorthMinor": "16578659",
+      "cashFlowMinor": "130438",
+      "incomeMinor": "480463",
+      "expensesMinor": "350025",
+      "assetsMinor": "16578659",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-08",
+      "netWorthMinor": "16723814",
+      "cashFlowMinor": "130849",
+      "incomeMinor": "481453",
+      "expensesMinor": "350604",
+      "assetsMinor": "16723814",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-09",
+      "netWorthMinor": "16869441",
+      "cashFlowMinor": "131263",
+      "incomeMinor": "482445",
+      "expensesMinor": "351182",
+      "assetsMinor": "16869441",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-10",
+      "netWorthMinor": "17015541",
+      "cashFlowMinor": "131677",
+      "incomeMinor": "483439",
+      "expensesMinor": "351762",
+      "assetsMinor": "17015541",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-11",
+      "netWorthMinor": "17162113",
+      "cashFlowMinor": "132090",
+      "incomeMinor": "484434",
+      "expensesMinor": "352344",
+      "assetsMinor": "17162113",
+      "liabilitiesMinor": "0"
+    },
+    {
+      "month": "2035-12",
+      "netWorthMinor": "17309161",
+      "cashFlowMinor": "132507",
+      "incomeMinor": "485432",
+      "expensesMinor": "352925",
+      "assetsMinor": "17309161",
+      "liabilitiesMinor": "0"
+    }
+  ]
+}

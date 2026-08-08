@@ -1,0 +1,62 @@
+{
+  "persona": "median-family",
+  "evaluationMonth": "2026-01",
+  "horizonMonths": 120,
+  "incomes": [
+    { "id": "income-salary", "kind": "active", "amountMinorCents": 380000, "annualGrowthRateBps": 250 }
+  ],
+  "expenses": [
+    { "id": "expense-fixed", "kind": "fixed", "amountMinorCents": 230000 },
+    { "id": "expense-variable", "kind": "variable", "amountMinorCents": 60000 }
+  ],
+  "assets": [
+    { "id": "asset-cash", "kind": "cash", "valueMinorCents": 1500000, "annualReturnRateBps": 0 },
+    { "id": "asset-investment", "kind": "investment", "valueMinorCents": 2200000, "annualReturnRateBps": 500 }
+  ],
+  "liabilities": [
+    {
+      "id": "liability-car-loan",
+      "kind": "loan",
+      "balanceMinorCents": 900000,
+      "annualInterestRateBps": 650,
+      "monthlyPaymentMinorCents": 28000
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-emergency-fund",
+      "targetAmountMinorCents": 1000000,
+      "targetMonth": null,
+      "priority": 1,
+      "status": "active",
+      "contribution": {
+        "kind": "recurring_monthly",
+        "amountMinorCents": 30000,
+        "startMonthIndex": 0,
+        "endMonthIndex": null
+      }
+    },
+    {
+      "id": "goal-house-down-payment",
+      "targetAmountMinorCents": 6000000,
+      "targetMonth": null,
+      "priority": 2,
+      "status": "active",
+      "contribution": {
+        "kind": "recurring_monthly",
+        "amountMinorCents": 70000,
+        "startMonthIndex": 0,
+        "endMonthIndex": null
+      }
+    },
+    {
+      "id": "goal-vacation",
+      "targetAmountMinorCents": 300000,
+      "targetMonth": "2026-07",
+      "priority": 3,
+      "status": "active",
+      "contribution": null
+    }
+  ],
+  "assumptions": { "inflationRateBps": 200, "defaultReturnRateBps": 500, "incomeGrowthRateBps": 250 }
+}

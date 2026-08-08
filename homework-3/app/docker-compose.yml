@@ -1,0 +1,54 @@
+# Spec-compliant production topology (PostgreSQL 16 + Redis 7).
+#
+# NOT required to run this homework's backend: the backend defaults to SQLite
+# (via Prisma) and an in-process recalculation dispatcher so it runs with zero
+# external services on Node 18.16 (see app/backend/README.md "Deviations").
+#
+# This file is provided so the spec's target infrastructure (specification.md
+# §5.1, §6.1) is reproducible when running against the real stack:
+#   1. `docker compose up -d` from this directory.
+#   2. In app/backend/.env set:
+#        DATABASE_URL="postgresql://horizon:horizon@localhost:5432/horizon?schema=public"
+#        REDIS_URL="redis://localhost:6379"
+#   3. Switch `prisma/schema.prisma` datasource provider from "sqlite" to
+#      "postgresql" (the schema is kept portable — no Postgres-only features
+#      are used, and IDs are app-generated UUIDv7 strings, not DB-native).
+#   4. Re-run `npx prisma migrate dev`.
+#   5. Wire BullMQ against REDIS_URL in place of the in-process dispatcher.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: horizon-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: horizon
+      POSTGRES_PASSWORD: horizon
+      POSTGRES_DB: horizon
+    ports:
+      - "5432:5432"
+    volumes:
+      - horizon-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U horizon -d horizon"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: horizon-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - horizon-redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  horizon-postgres-data:
+  horizon-redis-data:

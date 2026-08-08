@@ -1,0 +1,33 @@
+{
+  "persona": "fire-aspirant",
+  "evaluationMonth": "2026-01",
+  "horizonMonths": 240,
+  "incomes": [
+    { "id": "income-salary", "kind": "active", "amountMinorCents": 600000, "annualGrowthRateBps": 300 }
+  ],
+  "expenses": [
+    { "id": "expense-fixed", "kind": "fixed", "amountMinorCents": 150000 },
+    { "id": "expense-variable", "kind": "variable", "amountMinorCents": 50000 }
+  ],
+  "assets": [
+    { "id": "asset-cash", "kind": "cash", "valueMinorCents": 500000, "annualReturnRateBps": 0 },
+    { "id": "asset-investment", "kind": "investment", "valueMinorCents": 5000000, "annualReturnRateBps": 700 }
+  ],
+  "liabilities": [],
+  "goals": [
+    {
+      "id": "goal-financial-independence",
+      "targetAmountMinorCents": 30000000,
+      "targetMonth": null,
+      "priority": 1,
+      "status": "active",
+      "contribution": {
+        "kind": "recurring_monthly",
+        "amountMinorCents": 250000,
+        "startMonthIndex": 0,
+        "endMonthIndex": null
+      }
+    }
+  ],
+  "assumptions": { "inflationRateBps": 200, "defaultReturnRateBps": 700, "incomeGrowthRateBps": 300 }
+}
