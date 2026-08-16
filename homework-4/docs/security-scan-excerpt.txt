@@ -1,0 +1,46 @@
+# Security Report — Bug Batch 001
+
+**Reviewer:** Security Vulnerabilities Verifier (report only — no code was modified)
+**Date:** 2026-08-10
+**Input:** [`fix-summary.md`](./fix-summary.md) · [`bug-context.md`](./bug-context.md)
+
+---
+
+## Findings
+
+| ID | Severity | Title | Location | In changed code? |
+|----|----------|-------|----------|------------------|
+| SEC-001 | **HIGH** | Unauthenticated remote DoS — unhandled exception in async handler crashes the process | `src/server.js:33` | No (caller) |
+| SEC-002 | **HIGH** | `amount` type/range never validated — unauthenticated forgery of the `/summary` total | `src/utils.js:24`, `src/utils.js:6` | **Yes** |
+| SEC-003 | MEDIUM | No brute-force protection, rate limit or audit log on destructive `POST /admin/reset` | `src/server.js:76-82` | No (caller) |
+| SEC-004 | MEDIUM | Unbounded request-body accumulation — memory-exhaustion DoS | `src/server.js:19` | No (caller) |
+| SEC-005 | MEDIUM | Unbounded unauthenticated store growth, no field size caps | `src/store.js:18`, `src/server.js:39` | No (callee) |
+| SEC-006 | LOW | `isAdmin` length-mismatch early return leaks the admin token's byte length | `src/auth.js:12` | **Yes** |
+| SEC-007 | LOW | No authentication on expense read/write endpoints | `src/server.js:39,54,63` | No (caller) |
+| SEC-008 | LOW | Missing `X-Content-Type-Options: nosniff`; `description` echoed verbatim | `src/server.js:11` | No (caller) |
+| SEC-009 | LOW | Retired credential `admin123` still documented in-repo — must never be reused | `README.md:76` | No (docs) |
+| SEC-010 | LOW | `month` query parameter unvalidated — malformed input silently returns `200` + empty | `src/server.js:65-69` | **Yes** (semantics) |
+| SEC-011 | INFO | No strength/entropy requirement on `ADMIN_TOKEN` | `src/auth.js:6-7` | **Yes** |
+| SEC-012 | INFO | Fail-closed on unset `ADMIN_TOKEN` is indistinguishable from a wrong token | `src/auth.js:7`, `src/server.js:78` | **Yes** |
+| SEC-013 | INFO | Verified-clean: injection, prototype pollution, CSRF, dependencies | — | — |
+
+**Counts:** 2 HIGH · 3 MEDIUM · 5 LOW · 3 INFO. No CRITICAL.
+
+
+## Resolved by this fix batch
+
+### Security Concern #1 (`bug-context.md`) — Critical — **RESOLVED**
+
+The seeded concern was two-part: a credential *hardcoded in the repository* and compared
+with a *loose, non-constant-time comparison*. Both parts are confirmed fixed.
+  [...]
+
+## Verdict
+
+**Overall risk of the change set: LOW — the batch is a clear net security improvement and is
+APPROVED, with required follow-ups on the surrounding code.**
+
+The three changes do what `fix-summary.md` claims and introduce no new vulnerability. The
+
+(full report: context/bugs/001/security-report.md — 614 lines, 13 findings each with
+ severity, file:line, verified exploit scenario, and remediation)

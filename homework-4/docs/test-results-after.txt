@@ -1,0 +1,177 @@
+
+> tiny-expense-tracker@1.0.0 test
+> node --test tests/
+
+TAP version 13
+# (node:80763) MaxListenersExceededWarning: Possible EventTarget memory leak detected. 11 abort listeners added to [AbortSignal]. Use events.setMaxListeners() to increase limit
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:80763) MaxListenersExceededWarning: Possible EventTarget memory leak detected. 11 abort listeners added to [AbortSignal]. Use events.setMaxListeners() to increase limit
+# Subtest: isAdmin
+    # Subtest: returns true for the correct token when ADMIN_TOKEN is set
+    ok 1 - returns true for the correct token when ADMIN_TOKEN is set
+      ---
+      duration_ms: 0.330041
+      ...
+    # Subtest: returns false for an incorrect token of the same length
+    ok 2 - returns false for an incorrect token of the same length
+      ---
+      duration_ms: 0.095375
+      ...
+    # Subtest: returns false for a token of a different (shorter) length
+    ok 3 - returns false for a token of a different (shorter) length
+      ---
+      duration_ms: 0.161417
+      ...
+    # Subtest: returns false for a token of a different (longer) length
+    ok 4 - returns false for a token of a different (longer) length
+      ---
+      duration_ms: 0.07625
+      ...
+    # Subtest: returns false for a non-string token (number)
+    ok 5 - returns false for a non-string token (number)
+      ---
+      duration_ms: 0.745917
+      ...
+    # Subtest: returns false for a non-string token (null)
+    ok 6 - returns false for a non-string token (null)
+      ---
+      duration_ms: 0.32875
+      ...
+    # Subtest: returns false for a non-string token (undefined)
+    ok 7 - returns false for a non-string token (undefined)
+      ---
+      duration_ms: 0.128417
+      ...
+    # Subtest: returns false for a non-string token (object)
+    ok 8 - returns false for a non-string token (object)
+      ---
+      duration_ms: 0.067
+      ...
+    # Subtest: returns false for any token when ADMIN_TOKEN is unset
+    ok 9 - returns false for any token when ADMIN_TOKEN is unset
+      ---
+      duration_ms: 0.050875
+      ...
+    # Subtest: returns false for an empty-string token when ADMIN_TOKEN is unset
+    ok 10 - returns false for an empty-string token when ADMIN_TOKEN is unset
+      ---
+      duration_ms: 0.057542
+      ...
+    # Subtest: regression — the old hardcoded default token "admin123" no longer grants access when ADMIN_TOKEN is a different value
+    ok 11 - regression — the old hardcoded default token "admin123" no longer grants access when ADMIN_TOKEN is a different value
+      ---
+      duration_ms: 0.462959
+      ...
+    # Subtest: regression — the old hardcoded default token "admin123" no longer grants access when ADMIN_TOKEN is unset
+    ok 12 - regression — the old hardcoded default token "admin123" no longer grants access when ADMIN_TOKEN is unset
+      ---
+      duration_ms: 0.113334
+      ...
+    1..12
+ok 1 - isAdmin
+  ---
+  duration_ms: 3.421542
+  ...
+# Subtest: calculateTotal: regression — single-element list is not skipped (would be 0 under the pre-fix off-by-one loop)
+ok 2 - calculateTotal: regression — single-element list is not skipped (would be 0 under the pre-fix off-by-one loop)
+  ---
+  duration_ms: 0.406833
+  ...
+# Subtest: calculateTotal: regression — first expense in a multi-item list contributes to the sum
+ok 3 - calculateTotal: regression — first expense in a multi-item list contributes to the sum
+  ---
+  duration_ms: 0.036208
+  ...
+# Subtest: calculateTotal: edge case — empty list returns 0
+ok 4 - calculateTotal: edge case — empty list returns 0
+  ---
+  duration_ms: 0.030417
+  ...
+# Subtest: calculateTotal: edge case — single element list equals that element amount
+ok 5 - calculateTotal: edge case — single element list equals that element amount
+  ---
+  duration_ms: 0.024083
+  ...
+# Subtest: calculateTotal: rounds the sum to two decimal places
+ok 6 - calculateTotal: rounds the sum to two decimal places
+  ---
+  duration_ms: 0.024917
+  ...
+# Subtest: filterByMonth: regression — January (month=1) matches an item dated in January (pre-fix getMonth()===1 would compare 0===1 and always fail)
+ok 7 - filterByMonth: regression — January (month=1) matches an item dated in January (pre-fix getMonth()===1 would compare 0===1 and always fail)
+  ---
+  duration_ms: 0.222
+  ...
+# Subtest: filterByMonth: regression — December (month=12) matches an item dated in December (pre-fix getMonth()===12 would compare 11===12 and always fail)
+ok 8 - filterByMonth: regression — December (month=12) matches an item dated in December (pre-fix getMonth()===12 would compare 11===12 and always fail)
+  ---
+  duration_ms: 0.036291
+  ...
+# Subtest: filterByMonth: edge case — empty list returns an empty list
+ok 9 - filterByMonth: edge case — empty list returns an empty list
+  ---
+  duration_ms: 0.025125
+  ...
+# Subtest: filterByMonth: edge case — single element list matching the month/year is returned
+ok 10 - filterByMonth: edge case — single element list matching the month/year is returned
+  ---
+  duration_ms: 0.125625
+  ...
+# Subtest: filterByMonth: edge case — single element list not matching the month/year is excluded
+ok 11 - filterByMonth: edge case — single element list not matching the month/year is excluded
+  ---
+  duration_ms: 0.150417
+  ...
+# Subtest: filterByMonth: excludes an item whose month matches but whose year does not
+ok 12 - filterByMonth: excludes an item whose month matches but whose year does not
+  ---
+  duration_ms: 0.046625
+  ...
+# Subtest: filterByMonth: UTC boundary — a timestamp late on the last day of March in UTC (2026-03-31T23:30:00Z) is counted as March, not April
+ok 13 - filterByMonth: UTC boundary — a timestamp late on the last day of March in UTC (2026-03-31T23:30:00Z) is counted as March, not April
+  ---
+  duration_ms: 0.037458
+  ...
+# Subtest: calculateTotal returns 0 for an empty list
+ok 3 - calculateTotal returns 0 for an empty list
+  ---
+  duration_ms: 0.349375
+  ...
+# Subtest: calculateTotal sums every expense, including the first one
+ok 4 - calculateTotal sums every expense, including the first one
+  ---
+  duration_ms: 0.03425
+  ...
+# Subtest: calculateTotal of a single expense equals its amount
+ok 5 - calculateTotal of a single expense equals its amount
+  ---
+  duration_ms: 0.024167
+  ...
+# Subtest: filterByMonth returns expenses from the requested calendar month
+ok 6 - filterByMonth returns expenses from the requested calendar month
+  ---
+  duration_ms: 0.309334
+  ...
+# Subtest: filterByMonth respects the year
+ok 7 - filterByMonth respects the year
+  ---
+  duration_ms: 0.138792
+  ...
+# Subtest: validateExpense rejects a missing description
+ok 8 - validateExpense rejects a missing description
+  ---
+  duration_ms: 0.068041
+  ...
+# Subtest: validateExpense accepts a complete expense
+ok 9 - validateExpense accepts a complete expense
+  ---
+  duration_ms: 0.033792
+  ...
+1..20
+# tests 20
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 158.53975

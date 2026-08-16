@@ -1,0 +1,50 @@
+# Verified Research — Bug Batch 001
+
+## Verification Summary
+- Overall: PASS
+- Research Quality: SILVER (level 4/5) — per skills/research-quality-measurement.md
+- References resolved: 14/14 (unique `file:line` claims; 19/19 counting repeats)
+- Snippets exact: 5/6 (all 5 fenced code blocks byte-exact; the 6th is an inline quote of
+  `src/server.js:72` that omits the trailing comma — non-semantic, see Discrepancy 1)
+
+Gate: SILVER is at or above BRONZE, so the pipeline may proceed to planning.
+All three root causes were independently reproduced against unmodified source.
+
+---
+
+## Verified Claims
+
+| # | Claim | File:Line | Verdict | Note |
+|---|-------|-----------|---------|------|
+| 1 | `calculateTotal` loop starts at `i = 1`, skipping `expenses[0]` | `src/utils.js:3-9` | CONFIRMED | Fenced snippet byte-exact against source, including `Math.round(total * 100) / 100` |
+| 2 | `/summary` passes the full list into `calculateTotal` | `src/server.js:72` | CONFIRMED | Actual line: `      total: calculateTotal(result),` — inline quote drops the trailing comma only |
+| 3 | `GET /summary` handler spans the cited range | `src/server.js:63-74` | CONFIRMED | 63 = `if (req.method === 'GET' && url.pathname === '/summary') {`, 74 = closing `}` |
+| 4 | Single-element input yields `0` because `i = 1` fails `i < 1` | `src/utils.js:3-9` | CONFIRMED | Reproduced: `calculateTotal([{amount:42}])` → `0`; 3-item list → `24.25` (not `34.75`) |
+| 5 | `filterByMonth` compares 0-indexed `d.getMonth()` against the `month` argument | `src/utils.js:11-16` | CONFIRMED | Fenced snippet byte-exact |
+| 6 | Server parses `YYYY-MM` and passes the 1-indexed `m` unmodified | `src/server.js:65-69` | CONFIRMED | Fenced snippet byte-exact, indentation included |
+| 7 | Month `3` matches April; month `12` never matches | `src/utils.js:11-16` + `src/server.js:65-69` | CONFIRMED | Reproduced: `filterByMonth(exp,2026,3)` → `[2]` (the April row); `(...,2026,12)` → `[]` |
+| 8 | `count` returned by `/summary` is also computed from the mis-filtered list | `src/server.js:70-73` (within cited `63-74`) | CONFIRMED | `count: result.length` uses the same filtered `result` |
+| 9 | `ADMIN_TOKEN` is a hardcoded string literal in source | `src/auth.js:3` | CONFIRMED | `const ADMIN_TOKEN = 'admin123';` |
+| 10 | `isAdmin` uses loose `==` (non-constant-time) | `src/auth.js:5-7` | CONFIRMED | `return token == ADMIN_TOKEN;` — short-circuiting string compare, no constant-time primitive |
+| 11 | `src/auth.js:1-7` snippet as quoted | `src/auth.js:1-7` | CONFIRMED | Fenced snippet byte-exact (blank lines included) |
+| 12 | Raw `x-admin-token` header gates the destructive reset | `src/server.js:76-82` | CONFIRMED | Fenced snippet byte-exact |
+| 13 | `reset()` empties the entire in-memory store | `src/store.js:26-29` | CONFIRMED | `expenses.length = 0; nextId = 1;` |
+| 14 | `src/store.js` contains no defect relevant to this batch | `src/store.js` (full) | CONFIRMED | `addExpense`/`listExpenses`/`reset` reviewed; `listExpenses` returns a copy — no aliasing issue |
+| 15 | Failing test `calculateTotal sums every expense…` | `tests/utils.test.js:11-18` | CONFIRMED | Range exact; asserts `34.75`, actual `24.25` |
+| 16 | Failing test `calculateTotal of a single expense…` | `tests/utils.test.js:20-22` | CONFIRMED | Range exact; asserts `42`, actual `0` |
+| 17 | Failing test `filterByMonth returns expenses from the requested calendar month` | `tests/utils.test.js:24-32` | CONFIRMED | Range exact; expects `[1, 3]`, actual `[2]` |
+| 18 | Failing test `filterByMonth respects the year` | `tests/utils.test.js:34-41` | CONFIRMED | Range exact; expects `[2]`, actual `[]` |
+| 19 | Baseline is 7 tests / 3 pass / 4 fail, matching `docs/test-results-before.txt` | `docs/test-results-before.txt` | CONFIRMED | Fresh `npm test` reproduced: `# tests 7 / # pass 3 / # fail 4`, same four failures |
+| 20 | Tests use 1-indexed months, establishing the intended contract | `tests/utils.test.js:30,39` | CONFIRMED | `filterByMonth(expenses, 2026, 3)` for March, `(…, 2026, 6)` for June |
+| 21 | No automated test coverage for `src/auth.js` / `/admin/reset` | repo-wide | CONFIRMED | `tests/` contains only `utils.test.js`; grep for `isAdmin`/`reset(` finds no test reference |
+| 22 | Loose `==` is type-coercing on unexpected input | `src/auth.js:6` | PARTIALLY CONFIRMED | `==` is indeed coercing, but no exploitable bypass exists: `isAdmin(undefined)`, `isAdmin(0)`, `isAdmin([])` all return `false`. See Discrepancy 2 |
+
+Coverage check (grep for every call site of `calculateTotal`, `filterByMonth`, `isAdmin`,
+`ADMIN_TOKEN`, `reset(`): the only production call sites are `src/server.js:68`, `:72`,
+`:77`, `:80`. All are covered by the research. No involved file is missing from the
+research's "Files Inspected" list.
+
+---
+
+
+  [... Research Quality Assessment + References: see full file ...]

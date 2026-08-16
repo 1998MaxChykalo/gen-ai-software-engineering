@@ -1,0 +1,23 @@
+$ ADMIN_TOKEN=my-secret npm start
+Tiny Expense Tracker listening on http://localhost:3457
+
+$ curl -X POST localhost:3457/expenses -d '{"description":"Coffee","amount":10.5,"category":"food","date":"2026-03-15T12:00:00Z"}'
+{"id":1,"description":"Coffee","amount":10.5,"category":"food","date":"2026-03-15T12:00:00Z"}
+
+$ curl -X POST localhost:3457/expenses -d '{"description":"Groceries","amount":20,"category":"food","date":"2026-03-20T12:00:00Z"}'
+{"id":2,"description":"Groceries","amount":20,"category":"food","date":"2026-03-20T12:00:00Z"}
+
+$ curl -X POST localhost:3457/expenses -d '{"description":"Book","amount":4.25,"category":"fun","date":"2026-04-10T12:00:00Z"}'
+{"id":3,"description":"Book","amount":4.25,"category":"fun","date":"2026-04-10T12:00:00Z"}
+
+$ curl "localhost:3457/summary?month=2026-03"   # FIXED: correct total, correct month
+{"count":2,"total":30.5}
+
+$ curl "localhost:3457/summary"                 # all expenses, first one included
+{"count":3,"total":34.75}
+
+$ curl -X POST localhost:3457/admin/reset -H "x-admin-token: admin123"   # old hardcoded token DENIED
+{"error":"forbidden"}
+
+$ curl -X POST localhost:3457/admin/reset -H "x-admin-token: my-secret"  # env token accepted
+{"status":"reset"}
