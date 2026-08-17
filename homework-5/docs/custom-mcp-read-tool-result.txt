@@ -1,0 +1,10 @@
+$ .venv/bin/python tests/smoke_stdio.py
+                             with transport 'stdio'                             
+$ python server.py  (spawned over stdio by the MCP client)
+tools/list        -> ['read']
+tools/call read {}                 -> 30 words
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo..."
+tools/call read {"word_count": 10} -> 10 words
+   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
+resources/read lorem://words/5     -> "Lorem ipsum dolor sit amet,"
+OK: resource and read tool both return word-limited content
