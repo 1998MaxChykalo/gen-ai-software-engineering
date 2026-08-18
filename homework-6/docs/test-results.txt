@@ -1,0 +1,9 @@
+$ npm test
+# tests 63
+# suites 12
+# pass 63
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 308.987625

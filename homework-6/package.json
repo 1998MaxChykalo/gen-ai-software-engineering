@@ -1,0 +1,25 @@
+{
+  "name": "transaction-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Homework 6 capstone — AI-powered transaction processing pipeline (Node.js)",
+  "author": "Maksym Chykalo",
+  "scripts": {
+    "pipeline": "node orchestrator.js",
+    "validate": "node pipeline/validator.js --dry-run",
+    "serve": "node frontend/server.js",
+    "test": "node --test tests/",
+    "coverage": "c8 --check-coverage --lines 80 --include 'pipeline/**' --include 'orchestrator.js' node --test tests/"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "decimal.js": "^10.4.3",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "c8": "^9.1.0"
+  }
+}

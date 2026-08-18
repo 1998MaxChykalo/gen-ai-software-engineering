@@ -1,0 +1,26 @@
+== tools/list ==
+  - get_transaction_status: Return the current pipeline status of one transaction from shared/results/.
+  - list_pipeline_results: Summarize all processed transactions from the latest pipeline run.
+== resources/list ==
+  - pipeline://summary: Latest pipeline run summary as human-readable text.
+
+== tools/call get_transaction_status(transaction_id='TXN003') ==
+{"found":true,"transaction_id":"TXN003","timestamp":"2026-03-16T09:30:00Z","source_account":"ACC-**03","destination_account":"ACC-**99","amount":"9999.99","currency":"USD","transaction_type":"transfer","metadata":{"channel":"online","country":"US"},"status":"rejected","risk_score":70,"risk_factors":["NEAR_THRESHOLD","WATCHLIST_ACCOUNT"],"reason":"FRAUD_SUSPECTED"}
+
+== tools/call get_transaction_status(transaction_id='TXN999') ==
+{"found":false,"transaction_id":"TXN999","hint":"No result for this id. Run the pipeline first (node orchestrator.js) or check the id against sample-transactions.json."}
+
+== tools/call list_pipeline_results() ==
+{"ran":true,"run_id":"775cb2b4-987f-4845-afa7-d7103b0bd151","finished_at":"2026-08-18T09:23:46.793Z","counts":{"settled":5,"rejected":3},"requires_review":3,"settled_totals":{"USD":"104599.50","EUR":"499.75"},"transactions":[{"transaction_id":"TXN001","status":"settled","requires_review":false,"risk_score":0,"reason":null},{"transaction_id":"TXN002","status":"settled","requires_review":true,"risk_score":40,"reason":null},{"transaction_id":"TXN003","status":"rejected","requires_review":false,"risk_score":70,"reason":"FRAUD_SUSPECTED"},{"transaction_id":"TXN004","status":"settled","requires_review":true,"risk_score":35,"reason":null},{"transaction_id":"TXN005","status":"settled","requires_review":true,"risk_score":50,"reason":null},{"transaction_id":"TXN006","status":"rejected","requires_review":false,"risk_score":null,"reason":"INVALID_CURRENCY"},{"transaction_id":"TXN007","status":"rejected","requires_review":false,"risk_score":null,"reason":"INVALID_AMOUNT"},{"transaction_id":"TXN008","status":"settled","requires_review":false,"risk_score":0,"reason":null}]}
+
+== resources/read pipeline://summary ==
+Pipeline run 775cb2b4-987f-4845-afa7-d7103b0bd151
+started:  2026-08-18T09:23:46.779Z
+finished: 2026-08-18T09:23:46.793Z
+transactions: 8
+settled: 5 (requires review: 3) | rejected: 3
+settled net totals: 104599.50 USD, 499.75 EUR
+rejections:
+  - TXN003: FRAUD_SUSPECTED (NEAR_THRESHOLD, WATCHLIST_ACCOUNT)
+  - TXN006: INVALID_CURRENCY (XYZ)
+  - TXN007: INVALID_AMOUNT (amount must be positive)
