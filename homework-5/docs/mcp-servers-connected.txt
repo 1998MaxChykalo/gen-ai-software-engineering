@@ -1,0 +1,5 @@
+$ claude mcp list
+atlassian: https://mcp.atlassian.com/v1/sse (SSE) - ✔ Connected
+github: https://api.githubcopilot.com/mcp (HTTP) - ✔ Connected
+filesystem: /Users/maksymchykalo/.nvm/versions/node/v18.16.0/bin/mcp-server-filesystem . - ✔ Connected
+lorem-ipsum: /Users/maksymchykalo/Desktop/studying/gen-ai-software-engineering/homework-5/custom-mcp-server/.venv/bin/python /Users/maksymchykalo/Desktop/studying/gen-ai-software-engineering/homework-5/custom-mcp-server/server.py - ✔ Connected
