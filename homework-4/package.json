@@ -1,0 +1,11 @@
+{
+  "name": "tiny-expense-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny Expense Tracker — sample mini application for the homework-4 4-agent pipeline",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/",
+    "pipeline": "./run-pipeline.sh"
+  }
+}
