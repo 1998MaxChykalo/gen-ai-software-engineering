@@ -1,0 +1,36 @@
+$ node orchestrator.js
+2026-08-18T09:06:50.564Z | orchestrator | RUN-b72355db | started | records=8
+2026-08-18T09:06:50.592Z | validator | TXN001 | validated
+2026-08-18T09:06:50.595Z | validator | TXN002 | validated
+2026-08-18T09:06:50.601Z | validator | TXN003 | validated
+2026-08-18T09:06:50.602Z | validator | TXN004 | validated
+2026-08-18T09:06:50.603Z | validator | TXN005 | validated
+2026-08-18T09:06:50.605Z | validator | TXN006 | rejected | INVALID_CURRENCY
+2026-08-18T09:06:50.606Z | validator | TXN007 | rejected | INVALID_AMOUNT
+2026-08-18T09:06:50.607Z | validator | TXN008 | validated
+2026-08-18T09:06:50.615Z | fraud_detector | TXN001 | cleared | score=0 factors=[]
+2026-08-18T09:06:50.618Z | fraud_detector | TXN002 | flagged_for_review | score=40 factors=[HIGH_VALUE]
+2026-08-18T09:06:50.622Z | fraud_detector | TXN003 | rejected | score=70 factors=[NEAR_THRESHOLD,WATCHLIST_ACCOUNT]
+2026-08-18T09:06:50.624Z | fraud_detector | TXN004 | flagged_for_review | score=35 factors=[OFF_HOURS,CROSS_BORDER]
+2026-08-18T09:06:50.626Z | fraud_detector | TXN005 | flagged_for_review | score=50 factors=[VERY_HIGH_VALUE]
+2026-08-18T09:06:50.628Z | fraud_detector | TXN008 | cleared | score=0 factors=[]
+2026-08-18T09:06:50.634Z | settlement | TXN001 | settled | review=false
+2026-08-18T09:06:50.637Z | settlement | TXN002 | settled | review=true
+2026-08-18T09:06:50.639Z | settlement | TXN004 | settled | review=true
+2026-08-18T09:06:50.640Z | settlement | TXN005 | settled | review=true
+2026-08-18T09:06:50.642Z | settlement | TXN008 | settled | review=false
+
+TRANSACTION   STATUS     REVIEW   RISK  REASON
+--------------------------------------------------------
+TXN001        settled    -        0     
+TXN002        settled    yes      40    
+TXN003        rejected   -        70    FRAUD_SUSPECTED
+TXN004        settled    yes      35    
+TXN005        settled    yes      50    
+TXN006        rejected   -        -     INVALID_CURRENCY
+TXN007        rejected   -        -     INVALID_AMOUNT
+TXN008        settled    -        0     
+--------------------------------------------------------
+total: 8  settled: 5  requires_review: 3  rejected: 3
+settled net totals: USD 104599.50, EUR 499.75
+2026-08-18T09:06:50.686Z | orchestrator | RUN-b72355db | finished | results=8

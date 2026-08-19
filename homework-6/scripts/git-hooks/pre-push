@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Native git pre-push hook (Task 3): blocks `git push` from ANY terminal (not just
+# Claude Code) when the homework-6 coverage gate fails. Installed into .git/hooks/
+# by scripts/install-git-hooks.sh. Deliberate bypass: git push --no-verify.
+set -uo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+if ! "$REPO_ROOT/homework-6/scripts/coverage-gate.sh"; then
+  echo "pre-push: push blocked by the coverage gate (< 80%). Fix tests/coverage, or bypass deliberately with 'git push --no-verify'." >&2
+  exit 1
+fi
+exit 0

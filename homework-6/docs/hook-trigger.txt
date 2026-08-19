@@ -1,0 +1,7 @@
+$ hook input: {"tool_input":{"command":"ls -la"}}
+exit code: 0 (0 = allowed)
+
+$ hook input: {"tool_input":{"command":"git push origin hw6"}}
+coverage-gate: BLOCKED — no test files in homework-6/tests/ (coverage 0% < 80%).
+PUSH BLOCKED by coverage gate hook: unit test line coverage is below 80% (or tests are failing/missing). Run 'npm run coverage' in homework-6/, fix the suite, then push again.
+exit code: 2 (2 = push blocked)

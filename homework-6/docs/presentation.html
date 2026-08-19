@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Homework 6 — AI-Powered Transaction Processing Pipeline</title>
+<style>
+  @page { size: 297mm 167mm; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1c2333; }
+  .slide { width: 297mm; height: 167mm; padding: 16mm 20mm; page-break-after: always;
+           position: relative; background: #ffffff; overflow: hidden; }
+  .slide.dark { background: #1b2440; color: #eef1fa; }
+  h1 { font-size: 30pt; margin: 0 0 6mm; }
+  h2 { font-size: 20pt; margin: 0 0 7mm; color: #2f5cff; }
+  .dark h2, .dark h1 { color: #ffffff; }
+  .accent { color: #2f5cff; }
+  .dark .accent { color: #8ea8ff; }
+  p, li, td, th { font-size: 12pt; line-height: 1.5; }
+  ul { margin: 0; padding-left: 6mm; }
+  li { margin-bottom: 2.5mm; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #d5dbe8; padding: 2mm 3.5mm; text-align: left; }
+  th { background: #eef2fb; }
+  code, .mono { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 10.5pt; }
+  .cols { display: flex; gap: 10mm; }
+  .col { flex: 1; }
+  .footer { position: absolute; bottom: 7mm; left: 20mm; right: 20mm; display: flex;
+            justify-content: space-between; font-size: 9pt; color: #8a93ab; }
+  .dark .footer { color: #9aa6c8; }
+  .pill { display: inline-block; padding: 1mm 4mm; border-radius: 99px; font-size: 10pt;
+          font-weight: 600; margin-right: 2mm; }
+  .ok { background: #e2f5ea; color: #0f7b48; } .warn { background: #fdf0d4; color: #8a5a00; }
+  .bad { background: #fbe3e6; color: #a3202f; }
+  .flow { display: flex; align-items: center; gap: 4mm; margin: 8mm 0; }
+  .stage { border: 2px solid #2f5cff; border-radius: 4mm; padding: 5mm 6mm; text-align: center;
+           flex: 1; background: #f4f7ff; }
+  .stage b { display: block; font-size: 13pt; margin-bottom: 1.5mm; }
+  .stage span { font-size: 10pt; color: #66708a; }
+  .arrow { font-size: 18pt; color: #2f5cff; }
+  .bigstat { font-size: 34pt; font-weight: 700; }
+  .statgrid { display: flex; gap: 8mm; margin: 8mm 0; }
+  .statbox { flex: 1; border: 1px solid #d5dbe8; border-radius: 3mm; padding: 5mm; text-align: center; }
+  .statbox .lbl { color: #66708a; font-size: 10.5pt; }
+  img.shot { max-width: 100%; max-height: 108mm; border-radius: 2mm;
+             box-shadow: 0 2mm 6mm rgba(20,30,60,.25); }
+  .title-sub { font-size: 15pt; color: #9aa6c8; margin-top: 4mm; }
+  .title-meta { position: absolute; bottom: 18mm; left: 20mm; font-size: 12pt; color: #c3cdea; }
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Title -->
+<section class="slide dark">
+  <div style="margin-top: 38mm;">
+    <h1 style="font-size: 38pt;">AI-Powered Transaction<br>Processing Pipeline</h1>
+    <div class="title-sub">GenAI &amp; Agentic AI for Software Engineering — Homework 6 · Final Capstone</div>
+  </div>
+  <div class="title-meta">
+    Maksym Chykalo · August 2026<br>
+    Node.js · decimal.js · React · node:test · FastMCP · Claude Code (agents, skills, hooks, MCP)
+  </div>
+  <div class="footer"><span>Homework 6 — Capstone</span><span>1 / 7</span></div>
+</section>
+
+<!-- Slide 2: Architecture -->
+<section class="slide">
+  <h2>Architecture — a file-based pipeline</h2>
+  <p>Stages communicate <b>only</b> through JSON message envelopes in shared directories
+     (<code>shared/input → processing → output → results</code>). Each stage claims the envelopes
+     addressed to it, works in <code>processing/</code>, and emits a fresh envelope — written atomically.</p>
+  <div class="flow">
+    <div class="stage"><b>Orchestrator</b><span>seeds input, runs stages,<br>verifies, writes summary</span></div>
+    <div class="arrow">→</div>
+    <div class="stage"><b>1 · Validator</b><span>fields · amount ·<br>ISO 4217 · timestamp</span></div>
+    <div class="arrow">→</div>
+    <div class="stage"><b>2 · Fraud detector</b><span>risk score 0–100<br>reject / review / clear</span></div>
+    <div class="arrow">→</div>
+    <div class="stage"><b>3 · Settlement</b><span>fees (ROUND_HALF_UP)<br>net amount, masking</span></div>
+    <div class="arrow">→</div>
+    <div class="stage" style="border-color:#0f7b48;background:#f0faf4;"><b>results/</b><span>settled · rejected<br>summary.json · audit.log</span></div>
+  </div>
+  <div class="cols">
+    <div class="col">
+      <b>Money &amp; PII guardrails</b>
+      <ul>
+        <li>Amounts are <code>decimal.js</code> Decimals — native floats are forbidden everywhere</li>
+        <li>Accounts persist masked: <code>ACC-1001 → ACC-**01</code>; descriptions never logged</li>
+      </ul>
+    </div>
+    <div class="col">
+      <b>Observability</b>
+      <ul>
+        <li>ISO 8601 audit line per operation: timestamp | stage | txn | outcome</li>
+        <li>React dashboard, CLI table, and an MCP server over the same results</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Architecture</span><span>2 / 7</span></div>
+</section>
+
+<!-- Slide 3: Business rules -->
+<section class="slide">
+  <h2>Pipeline stages &amp; business rules</h2>
+  <div class="cols">
+    <div class="col">
+      <b>Validation → reject codes</b>
+      <table>
+        <tr><th>Check</th><th>Code</th></tr>
+        <tr><td>7 required fields present</td><td class="mono">MISSING_FIELD</td></tr>
+        <tr><td>positive decimal, ≤ 2 dp</td><td class="mono">INVALID_AMOUNT</td></tr>
+        <tr><td>ISO 4217 allowlist</td><td class="mono">INVALID_CURRENCY</td></tr>
+        <tr><td>ISO 8601 timestamp</td><td class="mono">INVALID_TIMESTAMP</td></tr>
+      </table>
+      <br>
+      <b>Settlement fees</b>
+      <table>
+        <tr><th>Type</th><th>Fee</th></tr>
+        <tr><td>wire_transfer</td><td>0.10%, min 25.00</td></tr>
+        <tr><td>transfer / refund / other</td><td>0.25 / 0.00 / 0.50</td></tr>
+      </table>
+    </div>
+    <div class="col">
+      <b>Fraud scoring (additive, cap 100)</b>
+      <table>
+        <tr><th>Rule</th><th>Condition</th><th>+</th></tr>
+        <tr><td class="mono">VERY_HIGH_VALUE</td><td>&gt; 50,000</td><td>50</td></tr>
+        <tr><td class="mono">HIGH_VALUE</td><td>10,000 – 50,000</td><td>40</td></tr>
+        <tr><td class="mono">NEAR_THRESHOLD</td><td>9,000 – 9,999.99 (structuring)</td><td>30</td></tr>
+        <tr><td class="mono">WATCHLIST_ACCOUNT</td><td>destination watchlisted</td><td>40</td></tr>
+        <tr><td class="mono">OFF_HOURS</td><td>00:00–04:59 UTC</td><td>20</td></tr>
+        <tr><td class="mono">CROSS_BORDER</td><td>country ≠ US</td><td>15</td></tr>
+      </table>
+      <p style="margin-top:4mm;">
+        <span class="pill bad">≥ 70 rejected</span>
+        <span class="pill warn">30–69 review</span>
+        <span class="pill ok">&lt; 30 cleared</span>
+      </p>
+    </div>
+  </div>
+  <div class="footer"><span>Business rules</span><span>3 / 7</span></div>
+</section>
+
+<!-- Slide 4: AI workflow -->
+<section class="slide">
+  <h2>The four-agent AI workflow (Claude Code)</h2>
+  <table>
+    <tr><th>Agent</th><th>Deliverable</th><th>Workflow artifact</th></tr>
+    <tr><td><b>1 · Specification</b></td><td><code>specification.md</code> — 5 sections, task-per-stage, testable outcome table</td>
+        <td><code>spec-writer</code> agent + <code>/write-spec</code> skill</td></tr>
+    <tr><td><b>2 · Code generation</b></td><td>pipeline, orchestrator, React dashboard</td>
+        <td><b>context7 MCP</b>: 3 documented queries (decimal.js, Express, Vite) in <code>research-notes.md</code></td></tr>
+    <tr><td><b>3 · Unit tests</b></td><td>63 tests, ~93% line coverage</td>
+        <td><code>unit-test-writer</code> agent + <b>coverage-gate hook</b>: push blocked &lt; 80%</td></tr>
+    <tr><td><b>4 · Documentation</b></td><td>README (author line), HOWTORUN, this deck</td>
+        <td>screenshots + evidence captured reproducibly into <code>docs/</code></td></tr>
+  </table>
+  <div class="cols" style="margin-top:7mm;">
+    <div class="col">
+      <b>Skills</b>
+      <ul>
+        <li><code>/run-pipeline</code> — full run + result summary + rejection report</li>
+        <li><code>/validate-transactions</code> — validator dry-run table, no processing</li>
+      </ul>
+    </div>
+    <div class="col">
+      <b>Hooks &amp; MCP</b>
+      <ul>
+        <li>PreToolUse hook + native git pre-push — both call one coverage gate script</li>
+        <li>Custom FastMCP server: <code>get_transaction_status</code>, <code>list_pipeline_results</code>, <code>pipeline://summary</code></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>AI workflow</span><span>4 / 7</span></div>
+</section>
+
+<!-- Slide 5: Demo -->
+<section class="slide">
+  <h2>Demo — all 8 sample transactions accounted for</h2>
+  <div class="cols">
+    <div class="col" style="flex: 1.4;">
+      <img class="shot" src="screenshots/frontend.png" alt="React dashboard">
+    </div>
+    <div class="col">
+      <div class="statgrid" style="margin-top:0;">
+        <div class="statbox"><div class="bigstat" style="color:#0f7b48;">5</div><div class="lbl">settled</div></div>
+        <div class="statbox"><div class="bigstat" style="color:#8a5a00;">3</div><div class="lbl">need review</div></div>
+        <div class="statbox"><div class="bigstat" style="color:#a3202f;">3</div><div class="lbl">rejected</div></div>
+      </div>
+      <ul>
+        <li><b>TXN003</b> — <span class="mono">FRAUD_SUSPECTED</span> (risk 70: structuring $9,999.99 + watchlisted ACC-9999)</li>
+        <li><b>TXN006</b> — <span class="mono">INVALID_CURRENCY</span> (<code>XYZ</code>)</li>
+        <li><b>TXN007</b> — <span class="mono">INVALID_AMOUNT</span> (−100.00)</li>
+        <li>Settled net totals: <b>104,599.50 USD</b> · <b>499.75 EUR</b></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Demo</span><span>5 / 7</span></div>
+</section>
+
+<!-- Slide 6: Testing & quality -->
+<section class="slide">
+  <h2>Testing &amp; quality gates</h2>
+  <div class="statgrid">
+    <div class="statbox"><div class="bigstat">63</div><div class="lbl">tests (node:test)</div></div>
+    <div class="statbox"><div class="bigstat">92.6%</div><div class="lbl">line coverage (c8)</div></div>
+    <div class="statbox"><div class="bigstat">80%</div><div class="lbl">hard push gate</div></div>
+    <div class="statbox"><div class="bigstat">0</div><div class="lbl">floats holding money</div></div>
+  </div>
+  <div class="cols">
+    <div class="col">
+      <b>What the suite proves</b>
+      <ul>
+        <li>Unit tests per stage: every rejection code, every fraud rule in isolation</li>
+        <li>Boundaries: 0.01 amounts, 3-dp rejection, 10,000.00 / 50,000.00 / 04:59, wire-fee minimum at 25,000, score cap 100</li>
+        <li>Integration: full pipeline in a temp root — statuses match the spec's outcome table byte-for-byte</li>
+        <li>PII invariants: no unmasked account appears in results or audit log</li>
+      </ul>
+    </div>
+    <div class="col">
+      <b>Coverage gate in practice</b>
+      <ul>
+        <li>One gate script → two enforcement points: Claude Code PreToolUse hook (exit 2 blocks the tool call) and native <code>.git/hooks/pre-push</code></li>
+        <li>Fails closed: no tests = 0% = blocked</li>
+        <li>Observed live: the hook intercepted a <code>git push</code> during development and blocked it until the suite landed</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Testing &amp; quality</span><span>6 / 7</span></div>
+</section>
+
+<!-- Slide 7: Lessons learned -->
+<section class="slide dark">
+  <h2>Lessons learned</h2>
+  <ul style="font-size: 13.5pt; line-height: 1.7; margin-top: 6mm;">
+    <li><b>Spec first pays off.</b> The expected-outcomes table written in Task 1 became the integration-test oracle in Task 5 — the pipeline matched it on the first run.</li>
+    <li><b>Design the sample data into the rules.</b> Every fraud weight was tuned so the 8 sample records exercise every decision branch (a rejection exactly at threshold 70, flags at 35/40/50).</li>
+    <li><b>Changing stacks is cheap when the spec is the contract.</b> Switching Python → Node.js + React was a one-document revision, then regeneration.</li>
+    <li><b>Hooks beat discipline.</b> A coverage gate that fails closed caught its first push the same day it was written.</li>
+    <li><b>MCP is two-way.</b> context7 fed docs into code generation; the custom FastMCP server exposes the pipeline back to the AI — the workflow both consumes and produces MCP.</li>
+    <li><b>Environment quirks are real work:</b> corporate npm registry, Node 18 vs 20 (undici needs the <code>File</code> global), sandboxed networking — all documented in HOWTORUN/research notes.</li>
+  </ul>
+  <div class="footer"><span>Maksym Chykalo · Homework 6 Capstone</span><span>7 / 7</span></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "/Users/maksymchykalo/.nvm/versions/node/v20.19.2/bin/npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "env": {
+        "PATH": "/Users/maksymchykalo/.nvm/versions/node/v20.19.2/bin:/usr/local/bin:/usr/bin:/bin",
+        "npm_config_registry": "https://registry.npmjs.org/"
+      }
+    },
+    "pipeline-status": {
+      "command": "homework-6/mcp/.venv/bin/python",
+      "args": ["homework-6/mcp/server.py"]
+    }
+  }
+}
